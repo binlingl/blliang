@@ -1,0 +1,40 @@
+@import "idea_list";
+@import "idea_details";
+@import "idea_edit";
+@import "ideasAdd";
+@import "appr_list_detail";
+@import "appr_list";
+@import "idea_appoval";
+@import "my_ideas_list";
+.ideas{
+  background: #F0F3F8;
+}
+.btn-outline-green{
+  background: #fff;
+  border-color: #2dcc70;
+  color: #2dcc70;
+
+}
+.btn-active {
+  background: #3dca99;
+  color: #fff;
+}
+
+.default-man-head-img{
+  width:87px;
+  height:87px;
+  display:inline-block;
+}
+.logo{
+  height: 20px;
+  width: 46px;
+  line-height: 16px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-left: 10px;
+  background: #9babff;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}

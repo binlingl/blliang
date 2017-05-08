@@ -1,0 +1,48 @@
+table {
+  font-size: 12px;
+  thead {
+    tr {
+      height: $thh;
+      background: $thb;
+      color: $table-head-font-color;
+      th {
+        border-bottom: 1px solid #d5d6d8;
+        border-left: 1px solid #d5d6d8;
+        padding-left: 5px;
+      }
+      th:last-child{
+        border-right: 1px solid #d5d6d8;
+      }
+    }
+  }
+  tbody {
+    tr {
+      height: $tch;
+      //background:$table-head-height;
+      color: #707070;
+      td {
+        padding-left: 5px;
+        border-left: 1px solid #d5d6d8;
+        border-bottom: 1px solid #d5d6d8;
+      }
+      td:last-child{
+        border-right: 1px solid #d5d6d8;
+      }
+    }
+    tr:nth-child(odd){
+      background:#f7f7f7
+    }
+    tr:nth-child(even){
+      background:#fff
+    }
+    tr:hover {
+      background: #dfefee;
+    }
+    select,input,textarea{
+      border:1px solid $ibc;
+      &:hover{
+        border:1px solid $ihbc;
+      }
+    }
+  }
+}

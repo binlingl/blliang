@@ -1,0 +1,64 @@
+<div class="setting-department">
+    <div class="department-con">
+        <div class="department-content">
+            <div class="top">
+                <div class="find">
+                    <label> 部门名称</label><input ng-model="find_content" type="text"/>
+                    <button ng-click="find_department_list()">查询</button>
+                </div>
+                <div class="add" >
+                    <span class="add-con" ng-click="add_department_show()">
+                        <img src="/images/setting/add.png" alt=""/>
+                    <button>新增</button>
+                    </span>
+                </div>
+            </div>
+            <div class="details">
+                <div style="background:#ffffff;">
+                    <dirtable datasource="asd" option="qwe"></dirtable>
+                </div>
+                <div class="table-responsive">
+                    <!--<table class="table table-bordered">-->
+                        <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<td> 序号</td>-->
+                            <!--<td width="180">部门名称</td>-->
+                            <!--<td width="165">启用状态</td>-->
+                            <!--<td width="290">备注</td>-->
+                            <!--<td width="180">创建人</td>-->
+                            <!--<td width="172">创建时间</td>-->
+                            <!--<td width="245">操作</td>-->
+                        <!--</tr>-->
+                        <!--</thead>-->
+                        <!--<tbody>-->
+                            <!--<tr ng-repeat="item in list_data">-->
+                                <!--<td ng-bind="$index+1"> 1</td>-->
+                                <!--<td ng-bind="item.name">研发一部</td>-->
+                                <!--<td>-->
+
+                                    <!--<span ng-if="item.status==true">启用</span>-->
+                                    <!--<span ng-if="item.status==false">停用</span>-->
+                                <!--</td>-->
+                                <!--<td ng-bind="item.remark">web前端</td>-->
+                                <!--<td ng-bind="item.createduser">舒兴祥</td>-->
+                                <!--<td ng-bind="item.created_at| date : 'yyyy-MM-dd hh:mm:ss'">2017.9.21</td>-->
+                                <!--<td class="action">-->
+                                    <!--<p>-->
+                                        <!--<span ng-show='permission.edit_depart' ng-click="update_department(item.id)">编辑</span>-->
+                                        <!--<span   ng-show='permission.del_depart' ng-click="department_cancel(item.id)">移除</span>-->
+                                    <!--</p>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+
+                        <!--</tbody>-->
+
+                    <!--</table>-->
+                    <div style="text-align:center" ng-show="nothing">
+                        <img src="/images/setting/nothing.png" alt=""/>
+                        <p style="font-size:14px;color:#2dcc70">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

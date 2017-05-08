@@ -1,0 +1,57 @@
+
+.appr_list{
+ // padding:30px 20px;
+  .waiting-list{
+    // width:1000px;
+    // padding:30px 40px;
+    box-sizing:border-box;
+    //  background: #fff;
+    .list-header{//table-header
+      background: #f7f7f7;
+    }
+    .my-btn{
+      width:60px;
+      height:30px;
+      background: transparent;
+      border:1px solid #aaa;
+      outline:0;
+      border-radius: 3px;
+    }
+    input[type="checkbox"]{
+      width:18px;
+      height:18px;
+    }
+    select{
+      width: 55px;
+      height: 35px;
+      margin-bottom: 7px;
+    }
+    .list-footer{
+      background: #f7f7f7;
+      .my-input{
+        outline:none ;
+        border:1px solid #a09d9d;
+        background: #fff;
+        width:44px;
+        height:34px;
+        padding:2px  ;
+        // background: transparent;
+      }
+      .my-bottom-page{
+        li{
+          margin:0 10px;
+        }
+      }
+    }
+  }
+
+  .no-list-pic{
+    img{
+      margin: 0 auto;
+    };
+    margin-top: 200px;
+    margin-bottom: 40px;
+  }
+}
+
+

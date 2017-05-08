@@ -1,0 +1,195 @@
+/* line 1, ../../scss/patent/import.scss */
+.patent_import {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 5, ../../scss/patent/_import.scss */
+.patent_import .export_main {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  color: #666666;
+  padding: 75px 75px;
+}
+/* line 11, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info_title {
+  color: #666666;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+/* line 16, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info {
+  margin: 0 10px 35px 0;
+}
+/* line 18, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info .export_info_details {
+  display: inline-block;
+  width: 89%;
+  height: 170px;
+  border-left: 1px solid #d1d2d3;
+  border-right: 1px solid #d1d2d3;
+  border-bottom: 1px solid #d1d2d3;
+  border-top: 2px solid #bfc7ca;
+  padding: 20px;
+}
+/* line 27, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info .export_info_details .export_info_type {
+  display: inline-block;
+  width: 112px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+/* line 35, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info .export_info_details .set_green {
+  background: #3dca99;
+  color: #ffffff;
+}
+/* line 42, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info .export_info_ready .input_style {
+  width: 300px;
+  height: 50px;
+  border: 1px solid #c0c7cd;
+}
+/* line 47, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info .export_info_ready .export_info_choose {
+  height: 250px;
+  margin-top: 25px;
+}
+/* line 50, ../../scss/patent/_import.scss */
+.patent_import .export_main .export_info .export_info_ready .export_info_choose .type_btn {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  background: #f3f2f2;
+  text-align: center;
+  margin-bottom: 25px;
+}
+/* line 64, ../../scss/patent/_import.scss */
+.patent_import .export_main table {
+  border: 1px solid #e0e0e0;
+  collapse: none;
+  width: 100%;
+}
+/* line 68, ../../scss/patent/_import.scss */
+.patent_import .export_main table tr, .patent_import .export_main table td {
+  border: 1px solid #dee5ed;
+}
+/* line 71, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_red {
+  color: #f84d46;
+}
+/* line 74, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_table_title, .patent_import .export_main table .set_table_content {
+  height: 50px;
+  line-height: 50px;
+  text-align: right;
+}
+/* line 78, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_table_title .yes_or_no, .patent_import .export_main table .set_table_content .yes_or_no {
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 30px;
+  height: 20px;
+}
+/* line 85, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_height {
+  height: 150px;
+}
+/* line 89, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_table_title {
+  width: 20%;
+  background: #f0f3f8;
+  padding-right: 10px;
+}
+/* line 94, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_table_content {
+  padding-left: 10px;
+  width: 80%;
+  text-align: left;
+}
+/* line 98, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_table_content .set_input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #dee5ed;
+}
+/* line 103, ../../scss/patent/_import.scss */
+.patent_import .export_main table .set_table_content .set_span {
+  color: #4f9bf9;
+  margin-left: 20px;
+}
+/* line 113, ../../scss/patent/_import.scss */
+.patent_import .export_success {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 310px;
+  height: 150px;
+  line-height: 150px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  margin-left: -155px;
+  margin-top: -75px;
+  background: rgba(143, 140, 135, 0.7);
+  border-radius: 10px;
+}
+/* line 127, ../../scss/patent/_import.scss */
+.patent_import .export_success .img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+/* line 135, ../../scss/patent/_import.scss */
+.patent_import .choose_btn {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  height: 50px;
+  margin-left: 20px;
+  line-height: 50px;
+  color: #545454;
+  border: 1px solid #cfcfcf;
+  background: white;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+/* line 148, ../../scss/patent/_import.scss */
+.patent_import .set_mar {
+  margin-top: 20px;
+}
+/* line 151, ../../scss/patent/_import.scss */
+.patent_import .set_color {
+  color: #3cca98;
+}
+/* line 154, ../../scss/patent/_import.scss */
+.patent_import .save {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+/* line 158, ../../scss/patent/_import.scss */
+.patent_import .save .save_button {
+  display: inline-block;
+  width: 170px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  color: #545454;
+  border: 1px solid #cfcfcf;
+  background: white;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+/* line 170, ../../scss/patent/_import.scss */
+.patent_import .save .btn_active {
+  border: none;
+  background: #3dca99;
+  color: white;
+}

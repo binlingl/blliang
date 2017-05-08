@@ -1,0 +1,90 @@
+<!--费用-申请费用-增加费用-->
+<div class="add_priviate_cost">
+    <form name="add_priviate_cost" ng-submit="saveApplicationfee()">
+        <div class="box">
+            <div class="modal-header">
+                  <div class="add_title">专利申请费用</div>
+            </div>
+            <div class="modal-body">
+              <table class="table table-bordered table-responsive">
+                <tr>
+                    <td class="titleName ">费用名称：</td>
+                    <td  width="320" class="getContent"><input type="text" ng-model="ApplicationfeeData.name" name="title" required
+                                                  placeholder="专利申请费用"/>
+                        <br/><i ng-show="add_priviate_cost.title.$dirty && add_priviate_cost.title.$invalid && add_priviate_cost.title.$error.required"
+                                class="my-help-block" style="font-style: normal">专利申请费用不能为空</i>
+                    </td>
+                    <td class="titleName ">已付金额：</td>
+                    <td width="320" class="getContent"><input type="text"
+                                                  ng-model="ApplicationfeeData.paid_amount"
+                                                  placeholder="￥"/></td>
+                </tr>
+                <tr>
+                    <td class="titleName ">官费：</td>
+                    <td class="getContent"><input type="text"
+                                                  ng-model="ApplicationfeeData.official_fee"
+                                                  placeholder="￥"/></td>
+                    <td class="titleName ">付款日期：</td>
+                    <td class="getContent">
+                        <!--<input type="text"  ng-model="ApplicationfeeData.payment_date" />-->
+                        <p class="date-time-dre">
+                            <input type="text" readonly id="payment_date" class="form-control"
+                                   uib-datepicker-popup
+                                   ng-model="ApplicationfeeData.payment_date"
+                                   is-open="popup.opened" datepicker-options="dateOptions"
+                                   close-text="Close" name="payment_date"/>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open()">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </button>
+                                                </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="titleName ">代理费：</td>
+                    <td class="getContent"><input type="text"
+                                                  ng-model="ApplicationfeeData.agency_fees"
+                                                  placeholder="￥"/></td>
+                    <td class="titleName ">收款方：</td>
+                    <td class="getContent">
+                        <input type="text" ng-model="ApplicationfeeData.beneficiary"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="titleName ">费用总额：</td>
+                    <td class="getContent"><input type="text"
+                                                  ng-model="ApplicationfeeData.total_cost"
+                                                  placeholder="￥"/></td>
+                    <td class="titleName ">联系人：</td>
+                    <td class="getContent">
+                        <input type="text" ng-model="ApplicationfeeData.contacts"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="titleName ">付款状态：</td>
+                    <td class="getContent">
+                        <select name="" ng-model="ApplicationfeeData.payment_status">
+                            <option value="1">已经付款</option>
+                            <option value="2">已经付款2</option>
+                            <option value="3">已经付款</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="titleName ">备注：</td>
+                    <td class="getContent">
+                                             <textarea name="" ng-model="ApplicationfeeData.remark" cols="30" rows="6">
+
+                                             </textarea>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div class="modal-footer next_action">
+                <button class="my-button my-btn-active" type="submit" ng-click="keepAll(ApplicationfeeData)" ng-disabled="add_priviate_cost.$invalid">保存</button>
+                <button class="my-button" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </form>
+</div>

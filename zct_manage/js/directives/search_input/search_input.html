@@ -1,0 +1,110 @@
+<style>
+    .content-header{
+        display: inline-block;
+    }
+    .my-p-style{
+        display: inline-block;
+        /*width:255px;*/
+        /*width:100%;*/
+        text-align: left;
+        margin-right:20px;
+    }
+    .my-div-style{
+        margin-right:0 !important;
+        display: inline-block;
+        /*width:50%;*/
+        text-align: center;
+    }
+    .textStyle{
+        width: 125px;
+        padding-left: 15px;
+        height: 38px;
+        border-radius: 3px;
+        outline: none;
+        border: 1px solid rgba(216, 214, 214, 0.86);
+    }
+</style>
+
+
+<div class="content-header">
+    <div ng-transclude></div>
+    <div class="my-div-style" ng-repeat="tmp in data track by $index">
+        <!--第一种-->
+        <p class="my-p-style" ng-repeat="opt in tmp.key_names" ng-if="tmp.value_type=='input'">
+            <span>{{opt.keyname}}&nbsp;</span>
+            <input  ng-model="submitData.input[opt.v]" class="textStyle" type="text" style="width:{{tmp.wid}}"/>
+        </p>
+
+        <!--第二种-->
+        <p class="my-p-style"   ng-if="tmp.value_type=='select'">
+            <select  class="textStyle" ng-model="submitData.select[$index].befTil"  name="title">
+                <option value="{{oname.v}}"   ng-repeat="oname in tmp.key_names">{{oname.keyname}}</option>
+            </select>
+            <select  class="textStyle"  ng-model="submitData.select[$index].subTil" name="subTitle"
+                     ng-if="tmp.key_names[submitData.select[$index].befTil].values.length>0">
+                <option value='{{vop.val}}' ng-repeat="vop in tmp.key_names[submitData.select[$index].befTil].values  track by $index">{{vop.name}}</option>
+            </select>
+        </p>
+
+        <!--第三种-->
+        <p class="my-p-style"   ng-if="tmp.value_type=='single_select'" ng-repeat="opt in tmp.key_names track by $index">
+            <select  class="textStyle" ng-model="submitData.single_select[$index].befTil"  name="title">
+                <!--<option value=" ">{{tmp.default_name}}</option>-->
+                <option value="{{oname.v}}"   ng-repeat="oname in opt track by $index">{{oname.keyname}}</option>
+            </select>
+            <input class="textStyle" type="text" ng-model="submitData.single_select[$index].subTil"/>
+        </p>
+
+        <!--第四种-->
+        <p class="my-p-style"   ng-if="tmp.value_type=='single_name'" ng-repeat="opt in tmp.key_names track by $index">
+            <span>{{opt.keyname}}&nbsp;</span>
+            <select  class="textStyle" ng-model="submitData.single_name[$index].befTil"  name="title">
+                <option value="{{oname.v}}"   ng-repeat="oname in opt.values">{{oname.name}}</option>
+                <!--<option value="{{opt.default_val.v}}">{{opt.default_val.name}}</option>-->
+            </select>
+        </p>
+
+    </div>
+
+    <button class="btn btn-sm btn-outline-green" ng-click="subMethData();inputmethods()">查询</button>
+
+</div>
+
+
+
+<!--<div class="content-header">-->
+<!--<div class="margin-right">-->
+<!--<span>关键字&nbsp;</span>-->
+<!--<input class="textStyle" type="text" ng-model="getIdeas.keyWord"/>-->
+<!--</div>-->
+<!--<div class="margin-right">-->
+<!--<span>部门&nbsp;</span>-->
+<!--<select class="textStyle" name="全部" ng-model="getIdeas.depart"  ng-option="depart.name for depart in departments">-->
+<!--<option value="">全部</option>-->
+<!--&lt;!&ndash;<option value="产品部">产品部门</option>&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="业务部">业务部</option>&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="研发部" ng-options="">研发部</option>&ndash;&gt;-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="margin-right">-->
+<!--<span>创意状态&nbsp;</span>-->
+<!--<select class="textStyle" name="全部" ng-model="getIdeas.iState">-->
+<!--<option value="">全部</option>-->
+<!--<option value="0">审核中</option>-->
+<!--<option value="1">未通过</option>-->
+<!--<option value="2">通过</option>-->
+<!--<option value="3">已转化</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="margin-right">-->
+<!--<span>标签&nbsp;</span>-->
+<!--<select class="textStyle" name="全部" ng-model="getIdeas.label" >-->
+<!--<option value="">全部</option>-->
+<!--<option value="商标">商标</option>-->
+<!--<option value="版权">版权</option>-->
+<!--<option value="专利">专利</option>-->
+<!--<option value="域名">域名</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<button class="btn btn-sm btn-outline-green" ng-click="getAll_ideasList()">查询</button>-->
+<!--</div>-->

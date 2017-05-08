@@ -1,0 +1,135 @@
+body{
+  font-family: "Microsoft Yahei";
+}
+.hand{
+  cursor: pointer;
+}
+li{
+  list-style: none;
+
+}
+input,button,textarea{
+  outline: none;
+  resize: none;
+}
+
+.shenglue{
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.fileup {
+  position: relative;
+  .filebutton {
+    font-size:$bfs;
+    background-color: $bbc;
+    color:$bfc;
+    margin-left: 350px;
+    position: absolute;
+    width: 70px;
+    line-height:$bh;
+    // height:$bh;
+    vertical-align:middle;
+    margin-top:-1px;
+    padding-top: $btp;
+    //padding-bottom:$bbp;
+    // margin-top: 5px;
+    border: solid 1px #cccccc;
+    text-align: center;
+    &:hover{
+      color:$bhfc;
+    }
+
+  }
+  .filelist {
+    border: 1px solid $ibc;
+    width: 335px;
+    height: 100%;
+    overflow: hidden;
+    min-height: $ih;
+    &:hover{
+      border: 1px solid $ihbc;
+    }
+    .filespandirective {
+      color: #34495e;
+      font-size: $ifs;
+      background: #e4ebee;
+      //margin-left: 5px;
+      //margin-top: 3px;
+      //margin-bottom: 2px;
+      display: block;
+      float: left;
+      padding: 1px 4px 1px;
+      border-radius: 2px;
+      button {
+        border-style: none;
+        background: #e4ebee;
+        margin: 4px 10px;
+        font-weight: bold;
+      }
+      button:hover {
+        color: #ff0000;
+      }
+    }
+
+  }
+}
+
+.date-time-dre{
+  display: inline-block;
+  margin-bottom: 0;
+  input{
+    background: #fff!important;
+    display: inline-block;
+    padding: 0 5px!important;
+    width: 100px!important;
+    height:$ih;
+    line-height:$ih;
+    border-radius: 0;
+    border:1px solid $ibc;
+  }
+  >div{
+    display: inline-block;
+  }
+  span{
+    display: inline;
+  }
+}
+.my-help-block {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  margin: 10px 5px;
+}
+p.my-help-block {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  margin: 10px 5px;
+  padding-left:50px;
+}
+
+button[disabled]{
+  background:gray !important;
+}
+.my-button{
+  display: inline-block;
+  font-size:$bfs;
+  padding:$btp $btnlrp;
+  color:$bfc;
+  border:none;
+  background:$bbc;
+  // border-radius: 3px;
+  margin-right: 20px;
+  &:hover{
+    border:none;
+    color:$bhfc;
+  }
+}
+.my-btn-active{
+  background: $bbc;
+  color:$bhfc;
+}
+
+
+

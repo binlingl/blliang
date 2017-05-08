@@ -1,0 +1,172 @@
+.setting-company-infor {
+  width: 100%;
+  margin: 0 auto;
+  padding-top:110px;
+  padding-bottom:200px;
+  background:#ffffff;
+  .company-infor-con{
+    width:435px;
+    margin:0 auto;
+    font-size:18px;
+    color:#999999;
+    div{
+      margin-top:20px;
+      .con-span{
+        width:310px;
+        //height:100%;
+        height:55px;
+        line-height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+        display:inline-block;
+        vertical-align:bottom;
+      }
+      input{
+        width:310px;
+        //height:100%;
+        height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+
+      }
+    }
+    .company-type{
+      select{
+        width:310px;
+        //height:100%;
+        height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+      }
+    }
+    .action{
+      margin-top:30px;
+      button{
+        width:210px;
+        height:53px;
+        border:none;
+        font-size:18px;
+        color:#ffffff;
+        border-radius: 4px;
+      }
+      .reserve{
+        background:#3dca99;
+      }
+      .cancel{
+        background:#4dd5bf;
+      }
+    }
+    .address{
+      select{
+        width:152px;
+        //height:100%;
+        height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+      }
+    }
+    .title{
+      display:inline-block;
+      background:#9295a0;
+      color:#ffffff;
+     width:100px;
+      height:55px;
+      line-height:55px;
+      text-align:center;
+      margin-right:15px;
+    }
+  }
+  .company-infor-con-show{
+    width:530px;
+    margin:0 auto;
+    font-size:14px;
+    color:#999999;
+
+
+    .back{
+      background:#f0f3f8;
+      padding:20px 45px;
+      border:1px solid #dfe5eb;
+      border-radius: 3px;
+      height:361px;
+    }
+    div{
+      //margin-top:20px;
+      .con-span{
+        width:310px;
+        //height:100%;
+        height:55px;
+        line-height:55px;
+        background:#f0f3f8;
+        border:none;
+        //padding-left:15px;
+        display:inline-block;
+        vertical-align:bottom;
+      }
+      input{
+        width:310px;
+        //height:100%;
+        height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+
+      }
+    }
+    .company-type{
+      select{
+        width:310px;
+        //height:100%;
+        height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+      }
+    }
+    .action{
+      margin-top:30px;
+      button{
+        width:90px;
+        height:35px;
+        border:none;
+        font-size:16px;
+        color:#ffffff;
+        border-radius: 4px;
+      }
+      .reserve{
+        background:#3dca99;
+      }
+      .cancel{
+        background:#4dd5bf;
+      }
+    }
+    .address{
+      select{
+        width:152px;
+        //height:100%;
+        height:55px;
+        background:#f0f3f8;
+        border:none;
+        padding-left:15px;
+      }
+    }
+    .title{
+      //display:inline-block;
+      //background:#9295a0;
+      width:100px;
+      height:55px;
+      line-height:55px;
+
+
+     // text-align:center;
+      //margin-right:15px;
+      font-size:14px;
+      color:#545655;
+      //font-weight: 600;
+    }
+  }
+}

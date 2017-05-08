@@ -1,0 +1,61 @@
+<div class="setting-user-exam">
+    <div class="state">
+        <div class="state-con">
+            <span>已加入</span>
+            <span class="active">待审核</span>
+        </div>
+    </div>
+    <div class="setting-user">
+        <div class="user-con">
+            <div class="user-content">
+                <!--<div class="top">-->
+                    <!--<div class="find">-->
+                        <!--<label> 部门名称</label><input type="text"/>-->
+                        <!--<button>查询</button>-->
+                    <!--</div>-->
+                    <!--<div class="user-add" ui-sref="home.setting.personal">-->
+                    <!--<span class="add-con">-->
+                        <!--<img src="/images/setting/add.png" alt=""/>-->
+                    <!--<button>新增</button>-->
+                    <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="details">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <td width="206"> 序号</td>
+                                <td width="206">姓名</td>
+                                <td width="267">手机号</td>
+                                <td width="202">创建人</td>
+                                <td width="202">创建时间</td>
+                                <td width="303">操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in item">
+                                <td> 1</td>
+                                <td ng-bind="x.realname">研发一部</td>
+                                <td ng-bind="x.phone">启用</td>
+                                <td ng-bind="x.createduser">舒兴祥</td>
+                                <td ng-bind="x.created_at">2017.9.21</td>
+                                <td class="action">
+                                    <p>
+                                        <span>编辑</span>
+                                        <span ng-click="remove($index)">移除</span>
+                                    </p>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,109 @@
+<!--专利管理-->
+<div class="patent_list">
+    <div class="container">
+        <div class="sec-nav"><!--中间的按钮-->
+            <!--<div ui-sref="home.patent_list" class="btn btn-active">专利管理</div>-->
+            <!--<div ui-sref="home.list_costmanage" class="btn">费用管理</div>-->
+            <!--<div ui-sref="home.my_patents" class="btn">我的专利</div>-->
+            <mytab data="patent_tab_list">
+            </mytab>
+        </div>
+        <div class="main-content-container"><!--中间的主题内容部分-->
+
+            <div class="sort">
+                <div class="sort-term">
+                    <div class="sort-con">
+                        <div class="con-top">
+                            <div class="add">
+                                <button ui-sref="home.patentAdd"><label> +</label>新增</button>
+                            </div>
+                            <!--<div class="action-con">-->
+                            <!--<span ng-click="delete_large_list()">-->
+                               <!--<img src="/images/patent/new_patent/cancel.png" alt=""/>-->
+                                <!--<label>删除</label>-->
+                            <!--</span>-->
+                                <!--<span class="line"><img src="/images/patent/new_patent/line.png" alt=""/></span>-->
+                             <!--<span>-->
+                               <!--<img src="/images/patent/new_patent/export.png" alt=""/>-->
+                                <!--<label>导出已选专利</label>-->
+                            <!--</span>-->
+                                <!--<span class="line"><img src="/images/patent/new_patent/line.png" alt=""/></span>-->
+                             <!--<span>-->
+                               <!--<img src="/images/patent/new_patent/load.png" alt=""/>-->
+                                <!--<label> 专利下载</label>-->
+                            <!--</span>-->
+                                <!--<span class="line"><img src="/images/patent/new_patent/line.png" alt=""/></span>-->
+                             <!--<span>-->
+                               <!--<img src="/images/patent/new_patent/import.png" alt=""/>-->
+                                <!--<label>Excel导入</label>-->
+                            <!--</span>-->
+
+                            <!--</div>-->
+
+                        </div>
+                        <div class="con-center">
+
+                            <div style="background:#ffffff;">
+                                <dirtable datasource="asd" option="qwe"></dirtable>
+                            </div>
+                            <!--<div class="table-responsive">-->
+                                <!--<table class="table table-bordered">-->
+                                    <!--<thead>-->
+                                    <!--<tr>-->
+                                        <!--<td width="115" class="number">案号</td>-->
+                                        <!--<td width="199">专利名称</td>-->
+                                        <!--<td width="128">申请号</td>-->
+                                        <!--<td width="90">申请日</td>-->
+                                        <!--<td width="90">公开日期</td>-->
+                                        <!--<td width="120">发明人</td>-->
+                                        <!--<td width="68">专利状态</td>-->
+                                        <!--<td width="112">操作</td>-->
+                                    <!--</tr>-->
+                                    <!--</thead>-->
+                                    <!--<tbody>-->
+                                    <!--<tr ng-repeat="item in list_item">-->
+                                        <!--&lt;!&ndash;ng-click="isSelect(item)"&ndash;&gt;-->
+                                        <!--<td class="number">-->
+                                            <!--<span ng-bind="item.casenumber" >PT2006836 </span>  </td>-->
+                                        <!--<td class="shenglue hand" ng-bind="item.name" ui-sref="home.patentDetails({id:item.id})">【发明】一种数据处理方法..</td>-->
+                                        <!--<td ng-bind="item.application_number">CN102917028A</td>-->
+                                        <!--<td ng-bind="item.application_date">2015-02-10</td>-->
+                                        <!--<td ng-bind="item.authorization_date">2015-02-10</td>-->
+                                        <!--<td class="shenglue" ng-bind="item.inventor">张三,李四,王二...  </td>-->
+                                        <!--<td ng-bind="item.statusStr">授权</td>-->
+                                        <!--<td class="action">-->
+                                            <!--<p>-->
+                                                <!--&lt;!&ndash;<span ng-click="quit_company(x.id)">退出企业</span>&ndash;&gt;-->
+                                                <!--<span class="act-list" ui-sref="home.patentAdd({patentid:item.id})">编辑</span>-->
+                                                <!--<span class="act-list" ng-click="delete_single_list(item.id)">删除</span>-->
+                                            <!--</p>-->
+                                        <!--</td>-->
+                                    <!--</tr>-->
+                                    <!--</tbody>-->
+
+                                <!--</table>-->
+                            <!--</div>-->
+
+                        </div>
+                        <div class="bottom-pagination">
+                            <!--template-url="/directive_tpls/pagination.html"-->
+                            <uib-pagination
+                                    ng-change="pageChanged()"
+                                    items-per-page="page.perPageItems"
+                                    total-items="page.bigTotalItems"
+                                    ng-model="page.bigCurrentPage"
+                                    max-size="page.maxSize"
+                                    class="pagination-sm pagination ng-isolate-scope ng-valid"
+                                    boundary-link-numbers="true"
+                                    rotate="true">
+                            </uib-pagination>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>

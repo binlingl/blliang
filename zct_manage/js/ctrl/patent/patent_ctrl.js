@@ -1,0 +1,9 @@
+define(["app",
+   'ctrl/patent/patent_list_ctrl',//专利列表控制器
+    'ctrl/patent/list_costmanage_ctrl',//费用列表控制器
+    'ctrl/patent/patent_add_ctrl',//费用列表控制器
+    'ctrl/patent/patent_details_ctrl',//专利详情
+    'ctrl/patent/my_patents_ctrl',//我的专利
+],function(huadeeapp){
+    console.log('getPatentList');
+});

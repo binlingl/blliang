@@ -1,0 +1,137 @@
+.proposal-add-user{
+  .next-processor-add{//right-processor-add
+    display:none;
+    position:fixed;
+    right:0;
+    top:0;
+    &.active{
+      display:block;
+    }
+    background:#f5f5f5;
+    border: 1px solid #a6a6a6;
+    width: 370px;
+    //height:600px;
+
+    //overflow-y: scroll;
+    //-ms-overflow-y: scroll;
+    // padding:20px;
+    .my-list-header{
+      display:inline-block;
+      width:100%;
+    }
+    .adder-processor-header{
+      height:160px;
+      padding:20px;
+      .choice-person-num{
+        display:inline-block;
+        width:220px;
+        font-size:15px;
+      }
+      .list-li-box{
+        width:56px;
+        height:74px;
+        //border:1px solid red;
+        padding:5px 0 0;
+        position:relative;//user forn user-list
+        img{//img style
+          width:44px;
+          height:44px;
+          border-radius: 50%;
+        }
+        .my-close{//my-x
+          position:absolute;
+          top:-4px;
+          right:0;
+          font-style: normal;
+          font-size:15px;
+          width:20px;
+          height:20px;
+          line-height: 16px;
+          border-radius:20px;
+          opacity:.7;
+          background:#707070;
+          color:#fff;
+          cursor:pointer;
+          display:none;
+          &.active{
+            display:block;
+          }
+        }
+
+      }
+    }
+    .next-processor-searcher{//search processor
+      position: relative;
+      padding:20px;
+      background: #e8e6e7;
+      .get-search-keyWords{
+        width:100%;
+        height:35px;
+        text-indent: 10px;
+        line-height: 35px;
+        border-radius:5px;
+        outline:none;
+        border:none;
+      }
+      .get-search-icon{
+        position:absolute;
+        top:30px;
+        right:30px;
+      }
+    }
+
+    .processor-list{
+      // border:1px solid red;
+      //  border:2px solid #a09d9d;
+      // height:100%;//men-list-height
+      height:600px;
+      overflow-y: scroll;
+      -ms-overflow-y: scroll;
+      .name-certify{//姓名分类
+        border-bottom:1px solid #a6a6a6;
+        padding:0 20px;
+      }
+      .processor-icon-list{//processor-head-icon
+        padding-left:20px;
+        li{
+          margin-bottom: 20px;
+        }
+        .man-header-icon{
+          width:50px;
+          height:50px;
+          border-radius: 50%;
+        }
+        .processor-name{
+          display:inline-block;
+          // border:1px solid red;
+          width:224px;
+          height:56px;
+          padding:8px;
+
+          span{
+            width:165px;
+            margin-right:10px;
+            display:inline-block;
+            overflow: hidden;
+          }
+        }
+        .dot-circle{
+          display:inline-block;
+          width:27px;
+          height:27px;
+          border-radius: 50%;
+          // background: #000000;
+          background: url(../../images/ideas/list.png) no-repeat -5px -5px;
+          &.active{
+            background-position:  -5px -38px;
+          }
+        }
+      }
+    }
+
+
+
+
+
+  }
+}

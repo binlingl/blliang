@@ -1,0 +1,47 @@
+<div class="register">
+    <div class="register-content">
+        <div class="top">
+            <!--<img src="/images/accout/login_back.png" alt=""/>-->
+        </div>
+        <div class="content">
+            <form name="account_reg" novalidate ng-submit="register()">
+                <div class="register-con">
+                    <div class="number space"><label><img src="/images/accout/number.png" alt=""/></label>
+                        <input ng-model="init.phone" autocomplete="off"
+                               ng-pattern="/^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$|(^(13[0-9]|15[0-9]|14[0-9]|17[0-9]|18[0-9])\d{8}$)/"
+                               name="myphone" required type="text" placeholder="请输入手机号码"/></div>
+                        <p ng-if="account_reg.myphone.$error.pattern" class="my-help-block">请输入手机号码</p>
+                        <p ng-if="account_reg.myphone.$dirty&&account_reg.myphone.$error.required" class="my-help-block">注册账号不能为空</p>
+
+                    <div class="confirm space">
+                        <span class="confirm-number">
+                            <label>
+                                <img src="/images/accout/confirm.png" alt=""/>
+                            </label>
+                            <input name="validateinfo" autocomplete="off" required ng-model="init.validateinfo" type="text" placeholder="请输入验证码"/>
+                        </span>
+                        <button type="button" class="achieve"
+                                ng-click="identifying_code()"
+                                ng-show="init.count==60" ng-disabled="account_reg.myphone.$invalid">获取验证码</button>
+                        <button class="achieve" ng-show="init.count!=60">{{init.count}}秒</button>
+
+                    </div>
+                        <p ng-if="account_reg.validateinfo.$dirty&&account_reg.validateinfo.$error.required" class="my-help-block">验证码不能为空</p>
+                    <div class="password space"><label><img src="/images/accout/password.png" alt=""/></label>
+                        <input autocomplete="off" ng-model="init.password" name="password" type="password" ng-pattern="/^(\w){6,12}$/"
+                               required  placeholder="请输入6-12位字符"/></div>
+                        <p ng-if="account_reg.password.$error.pattern" class="my-help-block">密码不符合要求</p>
+                        <p ng-if="account_reg.password.$dirty&&account_reg.password.$error.required" class="my-help-block">密码不能为空</p>
+                    <div class="submit space">
+                        <button type="submit" ng-disabled="account_reg.$invalid">立即注册</button>
+                    </div>
+                    <div class="action">
+                        <div class="find-password hand"></div>
+                        <div ui-sref="account.login" class="register hand">返回登录<span><img src="/images/accout/login.png" alt=""/></span></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

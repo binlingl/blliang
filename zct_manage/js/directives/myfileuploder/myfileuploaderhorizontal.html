@@ -1,0 +1,130 @@
+<!--横向多文件-->
+<style>
+    .webuploader-container {
+        position: relative;
+    }
+
+    .webuploader-element-invisible {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    .webuploader-pick {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background: #00b7ee;
+        /*padding: 1px 1px;*/
+        color: #fff;
+        text-align: center;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .webuploader-pick-hover {
+        background: #00a2d4;
+    }
+
+    .webuploader-pick-disable {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+</style>
+<!--<div class="myfileuploaderhorizontal">
+    <div class="file-type">&lt;!&ndash;文件类型&ndash;&gt;
+        <ul class="list-inline">
+            <li>
+                <div class="thubmail text-center">
+                    <img src="images/ideas/zip.png" class="img-responsive" alt="...">
+                </div>
+                <div class="caption">
+                    <h5>阿凡达...</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thubmail text-center">
+                    <img src="images/ideas/sug_pdf_one.png" class="img-responsive" alt="...">
+                </div>
+                <div class="caption">
+                    <h5>阿凡达...</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thubmail text-center">
+                    <img src="images/ideas/sug_ppt_one.png" class="img-responsive" alt="...">
+                </div>
+                <div class="caption">
+                    <h5>阿凡达...</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thubmail text-center t">
+                    <img src="images/ideas/sug_wd_one.png" class="img-responsive" alt="...">
+                </div>
+                <div class="caption">
+                    <h5>阿凡达...</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thubmail text-center">
+                    <img src="images/ideas/sug_xs_one.png"  class="img-responsive" alt="...">
+                </div>
+                <div class="caption">
+                    <h5>阿凡达...</h5>
+                </div>
+            </li>
+            <li class="plus-fix">
+                <div class="thubmail text-center">
+                    <img src="images/ideas/addPlus.png"  class="img-responsive" alt="...">
+                </div>
+                <div class="caption">
+                    <h5></h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>-->
+<div class="myfileuploaderhorizontal">
+    <div class="file-type">
+        <ul class="list-inline">
+            <li    ng-repeat="item in file_array_show">
+                <!--<div class="thubmail text-center" ng-click="del_click(item)">
+                    <img   src="images/ideas/sug_wd_one.png" class="img-responsive file_pic" alt="{{item.name}}">
+                    <i class="shadow glyphicon glyphicon-trash" ></i>
+                </div>
+                  <div class="caption">
+                    <h5>{{item.name|limitTo:10}}</h5>
+                </div>
+                -->
+                <div class="showfile">
+                    <div class="filename">
+                         {{item.name|limitTo:10}}
+                    </div>
+                   <div class="delete hand" ng-click="del_click(item)">取消</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="uploader-container">
+                    <div id="myfileuploaderhorizontal" >
+                      <!--  <img src="images/ideas/addPlus.png" alt="" >-->
+                        <img src="images/ideas/addbtn.png" alt="" >
+                    </div>
+                </div>
+                <div class="caption">
+                    <h5>   </h5>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<!--<div class="uploader-container">-->
+    <!--<div id="myfileuploaderhorizontal" >-->
+        <!--<img src="images/ideas/addPlus.png" alt="" >-->
+    <!--</div>-->
+<!--</div>-->
+

@@ -1,0 +1,223 @@
+<!--提案详情新窗口-->
+<div class="proposal_details">
+    <div class="set_details">
+        <div class="details_head">
+            <div class="details_head_type">
+                <span style="padding:5px 10px;border-radius: 3px;background:#50d6bd; color:#d9f2e8;margin:0 30px 18px 0;">
+                  <span ng-if="p_detaile.status==0">审核中</span>
+                <span ng-if="p_detaile.status==1">审核不通过</span>
+                <span ng-if="p_detaile.status==2">审核已通过</span>
+                </span>
+                <span ng-bind="p_detaile.name">一种基于语音的文字识别方式</span>
+            </div>
+            <div class="details_head_info">
+                <div class="info_detail">
+                    <span>创建人:</span>
+                    <span ng-bind="p_detaile.createduser">唐娟</span>
+                </div>
+                <div class="info_detail">
+                    <span>创建时间:</span>
+                    <span ng-bind="p_detaile.created_at | date:'yyyy-MM-dd'">2016/11/09</span>
+                </div>
+                <div class="info_detail">
+                    <span>最后更新人:</span>
+                    <span ng-bind="p_detaile.updateduser">唐娟</span>
+                </div>
+                <div class="info_detail">
+                    <span>最后更新时间:</span>
+                    <span ng-bind="p_detaile.updated_at | date:'yyyy-MM-dd'">2016/11/20</span>
+                </div>
+            </div>
+        </div>
+        <div class="details_main">
+            <div class="details_info">
+                <table>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span class="set_red">*</span>
+                            <span>案号:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont" ng-bind="p_detaile.casenumber">
+                            PT20164564
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span class="set_red">*</span>
+                            <span>提案名称:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                            <span ng-bind="p_detaile.name"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>提案类型:</span>
+                        </td>
+                        <td class="info_detail_cont">
+                        <span ng-bind="p_detaile.type">
+                        </span>
+                        </td>
+                        <td class="info_detail_name">
+                            <span>提案部门:</span>
+                        </td>
+                        <td class="info_detail_cont">
+                            <span ng-bind="p_detaile.partments"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>发明人:</span>
+                        </td>
+                        <td class="info_detail_cont">
+                            <span ng-bind="p_detaile.inventor"></span>
+                        </td>
+                        <td class="info_detail_name">
+                            <p class="text-justify">第一发明人身份证:</p>
+                        </td>
+                        <td class="info_detail_cont">
+                            <span ng-bind="p_detaile.first_inventor_idcard"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>所属产品:</span>
+                        </td>
+                        <td class="info_detail_cont">
+                            <span ng-bind="p_detaile.products"></span>
+                        </td>
+                        <td class="info_detail_name">
+                            <span>技术领域:</span>
+                        </td>
+                        <td class="info_detail_cont">
+                            <span ng-bind="p_detaile.technical_field"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>提案关键词:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont" ng-bind="p_detaile.keyword">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_point_name">
+                        <span class="set_style">
+                            发明点概述:
+                          </span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                        <span ng-bind="p_detaile.summary_invention" class="set_style">
+                        </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>技术交底书:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                            <span><a class="set_blue" ng-bind="p_detaile.technology_book"></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_point_name">
+                        <span class="set_style">
+                            技术交底附图:
+                          </span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                        <span class="set_style">
+                            <div style="width: 100px;height: 150px;" showimg="p_detaile.technology_drawings">
+
+                           <!--<img ng-src="{{setting.url_href.down_img+'/'+common.getImageID(p_detaile.technology_drawings)}}" alt=""/>-->
+                             <img ng-src="{{}}" alt=""/>
+                            </div>
+                        </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>检索报告:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                            <span ng-bind="p_detaile.patent_search_report"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>承办人:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                            <span ng-bind="p_detaile.contractor"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_detail_name">
+                            <span>其他附件:</span>
+                        </td>
+                        <td colspan="3" class="info_detail_cont">
+                            <span ng-bind="p_detaile.other_attachments"></span>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--提案详情右侧审批人信息-->
+    <div class="details_aside">
+        <div class="aside_title">
+            <span>提案审批</span>
+        </div>
+        <div class="aside_content">
+            <span class="deal_history">处理意见</span>
+
+            <div class="person_info">
+                <div class="person" ng-repeat="x in p_approvallist">
+                    <div class="person_photo">
+                        <img class="set_size" ng-src="x.head_image" alt=""/>
+                    </div>
+                    <div class="person_details">
+                        <div class="person_name">
+                            <span ng-bind="x.ApprovalUser"></span>
+                        </div>
+                        <div class="checked_date">
+                            <span ng-bind="x.ApprovalDate | data:'yyyy-MM-dd'">2016-06-05 15:26:36</span>
+                        </div>
+                        <div class="person_view">
+                            <span class="set_green" ng-if="x.approvalsts==2">同意</span>
+                            <span class="set_green" ng-bind="x.approvalsts==1">不同意</span>
+                        </div>
+                    </div>
+                    <div class="set_p" ng-bind="x.remark"></div>
+                </div>
+                <!--  <div class="person">
+                      <div class="person_photo">
+                          <img class="set_size" src="../images/proposal/portrait.png" alt=""/>
+                      </div>
+                      <div class="person_details">
+                          <div class="person_name">
+                              <span>陈伟庭</span>
+                          </div>
+                          <div class="checked_date">
+                              <span>2016-06-05 15:26:36</span>
+                          </div>
+                          <div class="person_view">
+                              <span class="department">部门预审-</span>
+                              <span class="set_green">同意</span>
+                          </div>
+                      </div>
+                      <div class="set_p"><span>发明可以再优化一点</span></div>
+
+                  </div>-->
+            </div>
+            <div class="testing">
+                <span>专家评审- </span>
+                <span class="set_red" ng-if="p_detaile.status==0">审核中</span>
+                <span class="set_red" ng-if="p_detaile.status==1">审核不通过</span>
+                <span class="set_red" ng-if="p_detaile.status==2">审核已通过</span>
+            </div>
+        </div>
+    </div>
+</div>

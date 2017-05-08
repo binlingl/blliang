@@ -1,0 +1,176 @@
+<!--创建企业后-->
+<div ng-show="status == '0'" class="scene_main">
+    <div class="main_face">
+        <div class="top_search">
+            <div class="work_space">
+                <span>工作台</span>
+            </div>
+            <!--正在下载专利时的头部显示-->
+            <div class="search_running">
+                <img src="../images/scene/star.png" alt="正在下载"/>
+                <span>正在为您下载15条专利，16条商标</span>
+                <div class="set_close">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!--成功下载专利的头部显示-->
+            <div style="display:none" class="search_running">
+                <img src="../images/scene/find_success.png" alt=""/>
+                <span>共15条专利，成功下载14条专利；共18条商标，成功下载15条商标</span>
+                <div class="set_close">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="work_content">
+            <div class="cost_warm">
+                    <span>年费提醒</span>
+                    <div class="content">
+                        <span style="color:#48bdf4">0条代缴年费</span>
+                    </div>
+                </div>
+            <div class="patent_num">
+                <span>专利统计</span>
+                <div class="content">
+                    <span style="color:#fa9090">0条专利</span>
+                </div>
+            </div>
+            <div class="brand_num">
+                <span>商标统计</span>
+                <div class="content">
+                    <span style="color:#a165e3">0条商标</span>
+                </div>
+            </div>
+            <div class="waiting_event">
+                <span>代办事项</span>
+                <div class="content">
+                    <span style="color:#fb965a">0条代办事项</span>
+                </div>
+            </div>
+            <div class="massage_warn">
+                <span>消息提醒</span>
+                <div class="content">
+                    <span style="color:#64d9eb">0条消息提醒</span>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div class="main_box">
+        <div class="searching">
+            <span class="set_close">X</span>
+            <div class="show_search">
+                <img src="../images/scene/check.png" alt="正在检测"/>
+                <p>检测到深圳市峰创智诚科技有限公司有15条专利16条商标</p>
+                <span>正在为您下载</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--场景选择选择了企业的时候-->
+<div  ng-show="status== '1'" class="scene_main">
+    <div class="main_face">
+        <div class="work_content">
+            <div class="cost_warm">
+                <span>年费提醒</span>
+                <div style="display:none" class="content">
+                    <span style="color:#48bdf4">0条代缴年费</span>
+                </div>
+                <div class="content_details">
+                    <div class="map">
+                        <div class="warm_left" id="cost1">
+                        </div>
+                        <!--<div class="warm_right" id="cost2">-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="patent_num">
+                <span>年费提醒</span>
+                <div style="display:none" class="content">
+                    <span style="color:#fa9090">0条专利</span>
+                </div>
+                <div class="content_details">
+                    <div class="map">
+                        <div class="warm_right" id="cost2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brand_num">
+                <!--<span>商标统计</span>-->
+                <!--<div style="display: none" class="content">-->
+                    <!--<span style="color:#a165e3">0条商标</span>-->
+                <!--</div>-->
+                <!--<div class="content_details">-->
+                    <!--<div class="map">-->
+                        <!--<div class="warm_left" id="brand_totalnum">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <span>专利统计</span>
+                <div style="display:none" class="content">
+                    <span style="color:#fa9090">0条专利</span>
+                </div>
+                <div class="content_details">
+                    <div class="map">
+                        <div class="warm_left" id="patent_totalnum">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="waiting_event">
+                <div class="details-title">代办事项</div>
+                <div style="display:none;" class="content">
+                    <span style="color:#fb965a">0条代办事项</span>
+                </div>
+                <div class="content_details">
+                       <ul>
+                        <li>
+                            <span class="set_span"><span class="set_pur set-margin">[创意]</span>张三新增提案《一种增强抵抗力的疫苗》</span>
+                        </li>
+                        <li>
+                            <span class="set_span"><span class="set_blue set-margin">[提案]</span>张三新增创意《不能说的秘密》等待审核</span>
+                        </li>
+                        <li>
+                            <span class="set_span"><span class="set-word set-margin">[商标]</span>张三新增提案《一种增强抵抗力的疫苗》张三新增提案《一种增强抵抗力的疫苗》</span>
+                        </li>
+                        <li>
+                            <span class="set_span" style="color:#bbbbbb"><span class="set-margin">[版权]</span>张三新增创意《不能说的秘密》等待审核</span>
+                        </li>
+                    </ul>
+                    </div>
+            </div>
+            <div class="massage_warn">
+                <div class="details-title">消息提醒</div>
+                <div style="display:none" class="content">
+                    <span style="color:#64d9eb">0条消息提醒</span>
+                </div>
+                <div class="content_details">
+                    <ul>
+                        <li>
+                           <span class="set_span"><span class="set-margin set-word">[新闻公告]</span>关于公司专利申请补贴政策</span>
+                        </li>
+                            <li>
+                                <span class="set_span"><span class="set-margin set-word">[创意]</span>关于公司专利申请补贴政策</span>
+                            </li>
+                        <li>
+                          <span class="set_span"> <span class="set-margin set-word">[提案]</span>李二蛋申请加入企业，等待您审核dvdfvdvfvxxxcvxcvx</span>
+                        </li>
+                        <li>
+                           <span class="set_span"><span class="set-margin set-word">[商标]</span>专利（1324343）因未缴年费，专利状态变,未缴年费，专利状态变</span>
+                        </li>
+                        <li>
+                           <span class="set_span"><span class="set-margin set-word">[版权]</span>提案专利（1324343）因未缴年利状态变,未缴年费，专利状态变</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>

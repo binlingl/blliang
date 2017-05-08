@@ -1,0 +1,120 @@
+.scene_new{
+  .new-content{
+    //min-height:400px;
+    width:100%;
+    background:#ffffff;
+    .top{
+      min-height:300px;
+      width: 100%;
+      min-width:600px;
+      background:url('/images/accout/login_back.png') no-repeat top left;
+      //background-size: contain;
+    }
+    .bottom{
+      width:500px;
+      margin:0 auto;
+      text-align:center;
+      margin-bottom:57px;
+         font-size:13px;
+         color:#b0b0b0;
+       }
+
+    .content{
+      margin-top:-155px;
+      .new_box{
+        width:600px;
+        height:420px;
+        margin:0 auto;
+        border:2px solid #eeeeee;
+        background:#fbfbfb;
+        padding:15px;
+        position:relative;
+        .set_tri{
+          width:0;
+          height:0;
+          border-left:20px solid #f1f1f1;
+          border-top:20px solid #f1f1f1;
+          border-right:20px solid white;
+          border-bottom:20px solid white;
+          position:absolute;
+          bottom:-2px;
+          right:-2px;
+        }
+        .back{
+        }
+        .create_epr{
+          text-align: center;
+          font-size:24px;
+        }
+        .in_epr{
+          margin:0 auto;
+          margin-top:32px;
+          width:500px;
+          input{
+            outline: medium;
+            border:none;
+            height:62px;
+            width:100%;
+            padding-left:35px;
+            line-height: 62px;
+            text-align: left;
+            color:#bbbbbb;
+            font-size:18px;
+          }
+        }
+        .active{
+          background:#f5fffb;
+        }
+        .set_border{
+          border:1px solid #3dc998;
+        }
+        .choose_epr{
+          display:block;
+          margin:20px auto;
+          width:500px;
+          height:62px;
+          padding-left:35px;
+          line-height: 62px;
+          text-align: left;
+          color:#bbbbbb;
+          font-size:18px;
+          border-radius: 3px;
+          border: 1px solid #26BB66;
+          position:relative;
+          .set_right{
+            position:absolute;
+            top:0;
+            left:437px;
+            width:60px;
+            height:59px;
+            text-align:center;
+            line-height:60px;
+            background:#f5fffb;
+          }
+        }
+       .create{
+         margin:30px auto;
+          width:500px;
+          height:62px;
+          line-height: 62px;
+          text-align: center;
+          border:1px solid #3dc998;
+          border-radius: 3px;
+          font-size:18px;
+          color:white;
+          background:#3dc998;
+         display:block;
+        }
+      }
+    }
+  }
+  .set_height{
+    width:100%;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+  }
+  .set_red{
+    color:red;
+  }
+}

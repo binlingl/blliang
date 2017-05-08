@@ -1,0 +1,384 @@
+<div class="proposal_my_list">
+    <!--我的提案-->
+    <div class="container">
+        <div class="main-content-container"><!--中间的主题内容部分-->
+            <div class="choice-input"><!--选择框-->
+                <select id="sug-name" ng-model="send_obj.searchType">
+                    <option ng-repeat="item in searchTypes" value="{{item.value}}">{{item.name}}</option>
+                </select>
+                <input type="text" class="input-type" ng-model="send_obj.keyword"/>
+
+                <span class="span-mar">提案类型</span>
+                <select id="sug-type" class="textStyle" ng-model="send_obj.type">
+                    <option ng-repeat="item in caseTypes" value="{{item.value}}">{{item.name}}</option>
+                </select>
+
+                <span class="span-mar">提案状态</span>
+                <select id="sug-state" ng-model="send_obj.status">
+                    <option ng-repeat="item in caseStates" value="{{item.value}}">{{item.name}}</option>
+                </select>
+
+                <button class="btn-active" ng-click="check()">查询</button></br>
+
+
+                <label>创建日期</label>
+                <!--<input type="text" placeholder="2016-12-18"/><i class="glyphicon glyphicon-calendar"></i>-->
+                <p class="date-time-dre">
+                    <input type="text" readonly id="startDate" class="form-control date_input" uib-datepicker-popup
+                           ng-model="send_obj.startDate"
+                           is-open="popup1.opened" datepicker-options="dateOptions">
+                    <span class="input-group-btn input-select-btn" >
+                            <button type="button" class="btn btn-default" ng-click="open1()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                    </span>
+                </p>
+                <label>至</label>
+                <p class="date-time-dre">
+                    <input type="text" readonly id="endDate" class="form-control date_input" uib-datepicker-popup
+                           ng-model="send_obj.endDate"
+                           is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true"
+                           close-text="Close" name="endDate"/>
+                    <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open2()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                    </span>
+                </p>
+            </div><!--选择按钮-->
+            <div class="grid-list"><!--表格面板-->
+                <div class="action-bar">
+                    <div ui-sref="home.proposal.add"
+                         class="btn-add glyphicon glyphicon-plus text-center"
+                         ng-show="proposal_right.add"
+                            >&nbsp;新增</div>
+                    <div ng-click="deleteCases()" class="choose_btn hand">
+                        <img src="../images/patent/cancel.png" alt=""/>
+                        删除&nbsp;&nbsp;|&nbsp;&nbsp;
+                    </div>
+                    <div class="choose_btn hand" ng-click="exportClick()">
+                        <img src="../images/patent/export.png" alt=""/>
+                        导出已选提案
+                    </div>
+                </div>
+                <div class="con-center">
+
+                    <div style="background:#ffffff;">
+                        <dirtable datasource="asd" option="qwe"></dirtable>
+                    </div>
+                    <!--<div class="table-responsive">-->
+                        <!--<table class="table table-bordered">-->
+                            <!--<thead>-->
+                            <!--<tr>-->
+                                <!--<td width="140" class="number"><input type="checkbox" ng-model="selectAll" ng-click="checkAll(selectAll)"/>&nbsp;&nbsp;案号</th></td>-->
+                                <!--<td width="199">提案名称</td>-->
+                                <!--<td width="128">创建人</td>-->
+                                <!--<td width="90">创建日期</td>-->
+                                <!--<td width="90">所属产品</td>-->
+                                <!--<td width="90">发明人</td>-->
+                                <!--<td width="68"> 提案状态</td>-->
+                                <!--<td width="116">操作</td>-->
+                            <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody>-->
+                            <!--<tr ng-repeat="x in item">-->
+                                <!--&lt;!&ndash;ng-click="isSelect(item)"&ndash;&gt;-->
+                                <!--<td class="number"><input type="checkbox" name="cases" ng-model="x.isChoose" ng-click="checkOne(x.isChoose,x.id)">-->
+                                    <!--<span class="hand" ng-bind="x.casenumber" ng-click="get_details(x.id)">PT2006836 </span></td>-->
+                                <!--<td class="shenglue hand"  ng-bind="x.name" ui-sref="home.proposal.details({id:x.id})"></td>-->
+                                <!--<td class="shenglue hand" ng-bind="x.createduser" ng-click="get_details(x.id)"></td>-->
+                                <!--<td ng-bind="x.created_at|date:'yyyy-MM-dd'" class="hand" ng-click="get_details(x.id)">CN102917028A</td>-->
+                                <!--<td ng-bind="x.products" class="hand" ng-click="get_details(x.id)">2015-02-10</td>-->
+                                <!--&lt;!&ndash; <td ng-bind="x.technical_field" class="hand" ng-click="get_details(x.id)">2015-02-10</td>&ndash;&gt;-->
+                                <!--<td class="shenglue hand"  ng-bind="x.inventor" ng-click="get_details(x.id)">张三,李四,王二...  </td>-->
+                                <!--<td ng-bind="x.statusStr" class="ng-binding hand" ng-click="get_details(x.id)">授权</td>-->
+                                <!--<td class="action">-->
+                                    <!--<p>-->
+                                        <!--&lt;!&ndash;<span ng-click="quit_company(x.id)">退出企业</span>&ndash;&gt;-->
+
+                                        <!--&lt;!&ndash;<span class="act-list" ui-sref="home.proposal.edit({id:x.id})"&ndash;&gt;-->
+                                              <!--&lt;!&ndash;ng-show="proposal_right.edit"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;编辑</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="act-list" ng-click="deleteOne(x.id)"&ndash;&gt;-->
+                                              <!--&lt;!&ndash;ng-show="proposal_right.del"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;删除</span>&ndash;&gt;-->
+
+                                        <!--<span ng-if="x.statusStr != '审核通过'" class="act-list"-->
+                                              <!--ng-show="proposal_right.edit"-->
+                                              <!--ui-sref="home.proposal.edit({id:x.id})">编辑</span>-->
+                                        <!--<span ng-if="x.statusStr != '审核通过'" class="act-list"-->
+                                              <!--ng-show="proposal_right.del"-->
+                                              <!--ng-click="deleteOne(x.id)">删除</span>-->
+
+                                    <!--</p>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+
+                    <!--<div class="pagination">-->
+                    <!--<div class="space"></div>-->
+                    <!--<div class="pagination-list">-->
+                    <!--<span class="pagination-show">-->
+                    <!--<label> 每页显示</label>-->
+                    <!--<select name="20">20-->
+                    <!--<option value="20">20</option>-->
+                    <!--<option value="50">50</option>-->
+                    <!--</select>-->
+                    <!--<i>-->
+                    <!--共20件创意，1/20页-->
+                    <!--</i>-->
+                    <!--</span>-->
+                    <!--<span class="pagination-next">-->
+                    <!--<button>  < </button>-->
+                    <!--<button>  > </button>-->
+                    <!--</span>-->
+                    <!--<span class="pagination-go">-->
+                    <!--<label> 跳转到</label>-->
+                    <!--<input type="text"/>-->
+                    <!--<button>GO</button>-->
+                    <!--</span>-->
+                    <!--</div>-->
+
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="page-nav"><!--页面数-->
+                <!--<div class="pull-right">-->
+                    <!--<div class="page-list-style">-->
+                        <!--<label>每页显示</label>-->
+                        <!--<select class="textStyle">-->
+                            <!--<option value="10">10</option>-->
+                            <!--<option value="20">20</option>-->
+                            <!--<option value="40">40</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="page-list-style">-->
+                        <!--<span>共20件创意、1/20页</span>-->
+                    <!--</div>-->
+                    <!--<div class="page-list-style">-->
+                        <!--<button class="btn btn-sm btn-default glyphicon glyphicon-menu-left"></button>-->
+                        <!--<button class="btn btn-sm btn-default glyphicon glyphicon-menu-right"></button>-->
+                    <!--</div>-->
+                    <!--<div class="page-list-style ">-->
+                        <!--<label >跳转到</label>-->
+                        <!--<input class="textStyle getPage" type="text"/>-->
+                        <!--<button class="btn btn-default btn-sm">GO</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="bottom-pagination">
+                    <uib-pagination template-url="../js/directives/pagination/pagination.html"
+                                    total-items="pageParam.totalItems"
+                                    ng-model="pageParam.currentPage"
+                                    max-size="pageParam.maxSize"
+                                    boundary-links="false"
+                                    ng-change="page_change()"
+                                    items-per-page="pageParam.perPageItems"
+                                    first-text="第一页" previous-text="上一页" next-text="下一页" last-text="最后页"
+                                    boundary-links="true" boundary-link-numbers="true">
+                    </uib-pagination>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--提案详情右侧弹出-->
+<div ng-show="show_details_aside==true" class="set_details_aside">
+    <div class="details_aside_head" ng-bind="p_detaile.name">
+        一种基于语音的文字识别方式
+    </div>
+    <div class="details_aside_main">
+        <div class="details_info">
+            <table>
+                <tr>
+                    <td class="info_detail_name">
+                        <span class="set_red">*</span>
+                        <span>案号:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont" ng-bind="p_detaile.casenumber">
+                        PT20164564
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span class="set_red">*</span>
+                        <span>提案名称:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span ng-bind="p_detaile.name">一种基于语音的文字识别方式</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>提案类型:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span ng-bind="p_detaile.type">
+                            发明
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>提案部门:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span ng-bind="p_detaile.partments">中国</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>发明人:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span ng-bind="p_detaile.inventor">深圳市扯淡科技有限公司</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>第一发明人身份证:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span ng-bind="p_detaile.first_inventor_idcard">开发部</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>所属产品:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span ng-bind="p_detaile.products">张三李四王二</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <p class="text-justify">技术领域:</p>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span ng-bind="p_detaile.technical_field">345345345</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>提案关键词:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont" ng-bind="p_detaile.keyword">
+                        <span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_point_name">
+                        <span class="set_style">
+                            发明点概述:
+                          </span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span class="set_style"  ng-bind="p_detaile.summary_invention">
+
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>技术交底书:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span><a class="set_blue" ng-bind="p_detaile.technology_book"></a></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_point_name">
+                        <span class="set_style">
+                            技术交底附图:
+                          </span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span class="set_style">
+                           <img ng-src="{{p_detaile.technology_drawings}}" alt=""/>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>检索报告:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span ng-bind="p_detaile.patent_search_report">一种基于语音的文字识别方式.doc</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>承办人:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span ng-bind="p_detaile.contractor"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>其他附件:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span ng-bind="p_detaile.other_attachments"></span>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="details_bottom">
+            <div class="aside_content">
+                <span class="deal_history">处理意见</span>
+                <div class="person_info">
+                    <div class="person" ng-repeat="x in p_approvallist">
+                        <div class="person_photo">
+                            <img class="set_size" ng-src="x.head_image" alt=""/>
+                        </div>
+                        <div class="person_details">
+                            <div class="person_name">
+                                <span ng-bind="x.ApprovalUser"></span>
+                            </div>
+                            <div class="checked_date">
+                                <span ng-bind="x.ApprovalDate | date:'yyyy-MM-dd'"></span>
+                            </div>
+                            <div class="person_view">
+                                <span class="department">部门预审-</span>
+                                <span class="set_green" ng-bind="x.approvalsts"></span>
+                            </div>
+                        </div>
+                        <div class="set_p" ng-bind="x.remark"></div>
+                    </div>
+                  <!--  <div class="person">
+                        <div class="person_photo">
+                            <img class="set_size" src="../images/proposal/portrait.png" alt=""/>
+                        </div>
+                        <div class="person_details">
+                            <div class="person_name">
+                                <span>陈伟庭</span>
+                            </div>
+                            <div class="checked_date">
+                                <span>2016-06-05 15:26:36</span>
+                            </div>
+                            <div class="person_view">
+                                <span class="department">部门预审-</span>
+                                <span class="set_green">同意</span>
+                            </div>
+                        </div>
+                        <div class="set_p"><span>发明可以再优化一点</span></div>
+
+                    </div>-->
+
+                </div>
+                <div class="testing">
+                    <span>专家评审- </span>
+                    <span>专家评审- </span>
+                    <span class="set_red" ng-if="p_detaile.status==0">审核中</span>
+                    <span class="set_red" ng-if="p_detaile.status==1">审核不通过</span>
+                    <span class="set_red" ng-if="p_detaile.status==2">审核已通过</span>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+

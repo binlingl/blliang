@@ -1,0 +1,40 @@
+<div class="setting-right-bar">
+    <div class="right-con">
+        <div class="company-infor-con">
+            <div class="theme"> 新增用户</div>
+            <div>
+                <span class="title">用户名称</span>
+                <input type="text" ng-model="editingUser.realname"/></div>
+            <div>
+                <span class="title">手机号码</span>
+                <input type="text" ng-model="editingUser.phone"/></div>
+            <div class="company-type">
+                <span class="title">用户角色</span>
+                <select>
+                    <option value="tmp.id" ng-repeat="tmp in data.RoleList">tmp.name</option>
+                    <!--<option value="">公司</option>-->
+                    <!--<option value="">公司</option>-->
+                </select>
+            </div>
+
+            <div class="company-type">
+                <span class="title">所属部门</span>
+                <select>
+                    <option value="tmp.id" ng-repeat="tmp in data.DepartmentList">tmp.name</option>
+                    <!--<option value="">公司</option>-->
+                    <!--<option value="">公司</option>-->
+                </select>
+            </div>
+            <!--<div class="detail">-->
+            <!--<div><label>创  建  人：</label> <span>{{editingUser.realname}}</span></div>-->
+            <!--<div><label>创建时间：</label> <span>  {{editingUser.created_at}}</span></div>-->
+            <!--<div><label>最后修改人：</label> <span>张毛毛</span></div>-->
+            <!--<div><label>最后修改时间：</label> <span> 2016-03-06  16:36:48</span></div>-->
+            <!--</div>-->
+            <div class="action">
+                <button class="my-button" ng-click="keepAll(editingUser)">保存</button>
+                <button class="my-button" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="patent_export">
+    <!--导出-->
+    <div class="export_main">
+        <div class="export_info_title">
+            <span class="set_color">| </span>
+            <span>专利导出</span>
+        </div>
+        <div class="export_info">
+            <span>导出内容 :</span>
+        </div>
+        <div class="export_info">
+            <div class="export_info_details">
+                <div class="export_info_type set_green" ng-repeat="item in exportList">
+                    <apan>{{item.field_name}}</apan>
+                    <span ng-click="deleteExport($index)" style="color:red;cursor:pointer;margin-right: 5px;margin-left:3px">X</span>
+                </div>
+            </div>
+        </div>
+        <div class="export_info">
+            <div class="export_info_ready">
+                <span>待选内容</span>
+                <div class="export_info_choose">
+                    <div class="type_btn" ng-repeat="item in colummList" ng-click="addExport(item.field,item.field_name)">
+                        {{item.field_name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="save">
+        <div class="save_button btn_active" ng-click="saveEcxl()">保存</div>
+        <div class="save_button">取消</div>
+
+    </div>
+</div>

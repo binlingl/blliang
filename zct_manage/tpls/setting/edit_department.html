@@ -1,0 +1,38 @@
+<div class="setting-right-bar">
+    <div class="right-con">
+        <form name="edit_department_form" novalidate  ng-submit="department_edit()" >
+            <div class="company-infor-con">
+
+                <div class="theme"> 编辑部门</div>
+                <div>
+                    <span class="title">部门名称</span>
+                    <input ng-model="edit_department.name" required  name="title"  type="text"/></div>
+                <div ng-show="edit_department_form.title.$dirty && edit_department_form.title.$invalid && edit_department_form.title.$error.required">
+                    <p class="my-help-block">部门名称不能为空</p>
+                </div>
+                <div class="company-type">
+                    <span class="title">启用状态</span>
+                    <select ng-model="edit_department.status" >
+                        <option value="ture">启用</option>
+                        <option value="false">停用</option>
+                    </select>
+                </div>
+                <div class="remarks"><span class="title">备注</span><textarea  ng-model="edit_department.remark" required name="remark" ></textarea></div>
+                <div ng-show="edit_department_form.remark.$dirty && edit_department_form.remark.$invalid && edit_department_form.remark.$error.required">
+                    <p class="my-help-block">备注不能为空</p>
+                </div>
+                <div class="detail">
+                    <div><label>创 建 人：</label> <span ng-bind="edit_department.create_company_user_id">张三</span></div>
+                    <div><label>创建时间：</label> <span ng-bind="edit_department.created_at| date : 'yyyy-MM-dd hh:mm:ss'"> 2016-03-06  16:36:48</span></div>
+                    <div><label>最后修改人：</label> <span ng-bind="edit_department.update_company_user_id">张毛毛</span></div>
+                    <div><label>最后修改时间：</label> <span ng-bind="edit_department.updated_at| date : 'yyyy-MM-dd hh:mm:ss'"> 2016-03-06  16:36:48</span></div>
+                </div>
+                <div class="action">
+                    <button class="reserve" type="submit" ng-click="keepAll(edit_department)" ng-disabled="edit_department_form.$invalid">保存</button>
+                    <button type="reset" class="cancel" ng-click="cancel()">取消</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

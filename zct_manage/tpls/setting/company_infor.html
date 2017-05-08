@@ -1,0 +1,80 @@
+<div class="setting-company-infor">
+    <div class="company-infor-con-show" ng-show="information_show">
+
+
+        <div class="back">
+            <div>
+                <span class="title">企业名称：</span>
+                <span class="con-span" ng-bind="company_item.name"></span>
+            </div>
+            <div class="company-type">
+                <span class="title">企业类型：</span>
+                <span class="con-span" ng-bind="company_item.type"></span>
+            </div>
+            <div><span class="title">联&nbsp;&nbsp;系&nbsp;&nbsp;人：</span><span class="con-span"
+                                                                              ng-bind="company_item.contacts"></span>
+            </div>
+            <div class="address">
+                <span class="title">所&nbsp;&nbsp;在&nbsp;&nbsp;地：</span>
+                <span class="con-span" ng-bind="company_item.address"></span>
+            </div>
+            <div><span class="title">详细地址：</span>
+                <span class="con-span" type="text" style="width:auto" ng-bind="company_item.address_data[0].name"></span>
+                <span class="con-span" type="text" style="width:auto"  ng-bind="company_item.address_data[1].name"></span>
+            </div>
+            <div><span class="title" style="width:250px;">接受年费短信提醒的手机号码:</span>
+                <span style="width:200px;" ng-bind="company_item.phone"
+                                                                                     class="con-span"
+                                                                                     type="text"></span></div>
+        </div>
+        <div class="action" style="text-align:center;">
+            <button class="reserve" ng-click="infor_edit()">编辑</button>
+        </div>
+
+    </div>
+    <div class="company-infor-con" ng-show="edit_show">
+
+        <form name="company" novalidate ng-submit="update_company(company)">
+            <div>
+                <span class="title">企业名称</span>
+                <input name="title" required ng-model="company_item.name" type="text"/>
+            </div>
+            <div ng-show="company.title.$dirty && company.title.$invalid && company.title.$error.required">
+                <p class="my-help-block">企业名称不能为空</p>
+            </div>
+            <div class="company-type">
+                <span class="title">企业类型</span>
+                <select ng-model="company_item.type">
+                    <option value="公司企业">公司企业</option>
+                    <option value="代理机构">代理机构</option>
+                    <option value="政府/事业单位">政府/事业单位</option>
+                    <option value="高校/研究院">高校/研究院</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            <div>
+                <span class="title">联&nbsp;&nbsp;系&nbsp;&nbsp;人</span>
+                <input name="contacts" required ng-model="company_item.contacts" type="text"/>
+            </div>
+            <div ng-show="company.contacts.$dirty && company.contacts.$invalid && company.contacts.$error.required">
+                <p class="my-help-block">联系人不能为空</p>
+            </div>
+            <div class="address">
+                <span class="title">所&nbsp;&nbsp;在&nbsp;&nbsp;地</span>
+                <hcascade  data="area_list" selectresult="area_address"></hcascade>
+            </div>
+            <div><span class="title">详细地址</span><input type="text" name="address" required
+                                                       ng-model="company_item.address"></div>
+            <div ng-show="company.address.$dirty && company.address.$invalid && company.address.$error.required">
+                <p class="my-help-block">详细地址不能为空</p>
+            </div>
+            <div><span class="title">提醒手机号</span><input type="text" name="address" required
+                                                       ng-model="company_item.phone"></div>
+            <div class="action">
+                <button class="reserve" type="submit" ng-disabled="company.$invalid">保存</button>
+                <button class="cancel" ng-click="edit_cancel()">取消</button>
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="p-service-login">
+    <div>
+        <div class="row head">
+            <div class="title pull-left" style="float:none !important;">用户登录
+                <div style="color:red;font-size:15px;margin: 30px 0 0 80px">{{msg}}</div>
+            </div>
+            <div class="messages pull-right" ng-bind="messages"></div>
+        </div>
+        <form class="form-horizontal" name="usersform"  ng-submit="login_usersform_submit(cancel)">
+            <div>
+                <input type="text" name="email" ng-model="pdata.email" class="form-control" placeholder="邮箱或手机号"  required>
+            </div>
+            <div>
+                <input type="password" name="password" ng-model="pdata.password" class="form-control" placeholder="密码"  required>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-warning btn-lg" style="width: 100%;outline: none;border: 0;">登录</button>
+            </div>
+            <div class="links">
+                <div class="row">
+                    <div ng-click="closeloginform()" class="pull-right">
+                        <a href="{{config.url_href.register_now}}">免费注册</a>
+                        <span class="v-line">|</span>
+                        <a href="{{config.url_href.forget_password}}">忘记密码</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,227 @@
+
+.ideas-list{
+  margin: 0 auto;
+  .my-row{
+    margin:auto 0;
+  }
+  min-height: 1500px;
+   width:1200px;
+    .list-nav{
+      background: #fff;
+      height: 420px;
+      padding:20px;
+
+      li{
+        font-size:20px;
+        height:60px;
+        .btn{
+          border-radius: 20px;
+          &.btn-active{
+            background: #3dca99;
+            color:#fff;
+          }
+        }
+      }
+    }
+    .list-content {
+      background: #fff;
+     // min-height:1000px;
+      padding:30px 20px;
+    //margin-left:30px;
+     // position:relative;//用于发布布创意的按钮定位
+      .btn-green{
+        color:#fff;
+        width:60px;
+        background-color: #3dc998;
+        height:60px;
+        outline: none;
+       // position:absolute;
+        right:-75px;
+        top:87%;
+      }
+
+      .add-idea{
+        color:#fff;
+        width:60px;
+        background-color: #3dc998;
+        height:60px;
+        outline: none;
+        position:fixed;
+        right: 15%;
+        top: 75%;
+      }
+      //.go-top{
+      //  color: #fff;
+      //  width: 60px;
+      //  background-color: #b6caeb;
+      //  height: 60px;
+      //  outline: none;
+      //  position: fixed;
+      //  right:22%;
+      //  top: 80%;
+      //  border:none;
+      //}
+    .content-header{
+    //  height: 87px;
+     // line-height: 83px;
+      border-bottom: 1px solid #dfe6ee;
+      padding-left:20px;
+      margin-bottom:28px;
+      color:#888888;
+      .margin-right{
+        margin-right:10px;
+        display:inline-block;
+        .textStyle{
+//          width:100px;
+//          padding: 5px 10px;
+//          font-size: 12px;
+//          line-height: 1.5;
+//          border-radius: 3px;
+          width: 125px;
+          padding-left: 15px;
+          height:38px;
+          border-radius: 3px;
+          outline: none;
+          border: 1px solid rgba(216, 214, 214, 0.86);
+        }
+      }
+      .btn-outline-green{
+        //height:20px;
+        //line-height: 20px
+        width:74px;
+        height:36px;
+        background: #fff;
+        border-color: #2dcc70;
+        color: #2dcc70;
+      }
+       .my-btn-lg{
+          width:20px;
+         height:20px;
+         border-radius: 20px;
+         line-height: 20px;
+         background:#3DC998;
+       }
+
+    }
+    .detail-list{
+     // padding:40px 0;
+     // margin:20px;
+      .media-body{
+        vertical-align: bottom !important;
+        padding-left:15px;
+      }
+      .word-des{
+        //cursor: pointer;
+        margin-top: 25px;
+        margin-bottom: 27px;
+          //padding:0 40px;
+          min-height:190px;
+          border:1px solid #ecf4f7;
+          background:#f6f7fb;
+          font-size:15px;
+        .top-alert{
+           height: 70px;
+           line-height: 70px;
+          .my-img{
+            vertical-align: top;
+          }
+          .mark-icon{
+            width:70px;
+          }
+         .header-des{
+            border-bottom:1px dotted #aaaaaa;
+            display:inline-block;
+            //  height:70px;
+             width:858px;
+            vertical-align: top;
+
+           .my-btn-lg{
+             width:80px;
+             height:30px;
+             border-radius: 30px;
+             line-height: 17px;
+             outline:none;
+             color:#3DCA99;
+             background: #fff;
+             border:1px solid #3DC998;
+             &.btn-green{
+               color:#fff;
+               //float:right;
+               background:#3DC998;
+             }
+           }
+          }
+
+          //.primate-right{//专利
+          //  background: #b9acfc;
+          //  color:#fff;
+          //  padding:2px 5px;
+          //  border-radius: 5px;
+          //}
+          //.logo{//商标
+          //  background: #9babff;
+          //  color:#fff;
+          //  padding:2px 5px;
+          //  border-radius: 5px;
+          //  margin-right:5px;
+          //}
+          //.board-right{//版权
+          //  background: #f29c9f;
+          //  color:#fff;
+          //  padding:2px 5px;
+          //  border-radius: 5px;
+          //}
+          //.sug{
+          //  background: #7ecef4;
+          //  color:#fff;
+          //  padding:2px 5px;
+          //  border-radius: 5px;
+          //}
+        }
+        .word{
+          padding:10px 70px;
+          height:130px;
+        }
+
+        .fix-file{
+          padding:0 70px 10px;
+          .thubmail{
+            img{
+              margin:0 auto;
+            }
+          }
+        }
+      }
+
+      .no-details-pic{
+        margin:190px auto 20px;
+      }
+      .alert-word{
+        margin-bottom:190px;
+      }
+    }
+}
+
+//admin action header nav
+  .adminAction-listHeader{
+    // background:#f0f3f8;
+    height:60px;
+    line-height: 60px;
+   // margin-left:30px ;
+    .my-btn-lg{
+      display:inline-block;
+      text-decoration: none;
+      font-size: 15px;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 15px;
+      &.active{
+        background: #3dc998;
+        color:#fff;
+      }
+    }
+  }
+
+}//ideas

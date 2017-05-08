@@ -1,0 +1,182 @@
+<div class="proposal_edit">
+    <!--编辑提案详情-->
+    <div class="edit_head">
+        <div class=edit_type">
+            <span style="padding:5px;border-radius: 3px;background:#3dca99; color:#d9f2e8;margin:0 30px 18px 0;">
+                {{htmlObj.status}}
+            </span>
+            <span>{{htmlObj.name}}</span>
+        </div>
+        <div class="edit_info">
+            <div class="info_detail">
+                <span>创建人:</span>
+                <span ng-bind="htmlObj.createduser"></span>
+            </div>
+            <div class="info_detail">
+                <span>创建时间:</span>
+                <span ng-bind="htmlObj.created_at|date:'yyyy-MM-dd'"></span>
+            </div>
+            <div class="info_detail">
+                <span>最后更新人:</span>
+                <span ng-bind="htmlObj.updateduser"></span>
+            </div>
+            <div class="info_detail">
+                <span>最后更新时间:</span>
+                <span ng-bind="htmlObj.updated_at|date:'yyyy-MM-dd'"></span>
+            </div>
+
+        </div>
+    </div>
+    <form name="form" class="add" >
+        <div class="add_content">
+            <div class="add_top">
+                <span>编辑提案信息</span>
+            </div>
+            <div class="add_detail">
+                <div class="add_info">
+                    <div class="add_name_left">
+                        <span>提案号</span>
+                    </div>
+                    <input class="input_content no_change" readonly ng-model="htmlObj.casenumber"/>
+                </div>
+                <div class="add_info">
+                    <div class="add_name">
+                        <span>发明人</span>
+                    </div>
+                    <input ng-model="htmlObj.inventor" class="input_content" type="text" placeholder=""/>
+                </div>
+                <div class="add_info">
+                    <div class="add_name_left">
+                        <span  class="set_red">*</span>
+                        <span>提案名称</span>
+                    </div>
+                    <input ng-model="htmlObj.name" class="input_content" ng-click="nameempty=false"/>
+                    <p ng-if="nameempty" class="set_err set_red">提案名称不能为空</p>
+                </div>
+                <div class="add_info">
+                    <div class="add_name">
+                        <span>所属产品</span>
+                    </div>
+                    <input ng-model="htmlObj.products"  class="input_content" />
+                </div>
+                <div class="add_info">
+                    <div class="add_name_left">
+                        <span  class="set_red">*</span>
+                        <span>提案类型</span>
+                    </div>
+                    <select ng-model="htmlObj.type" class="input_content" ng-click="typeempty=false">>
+                        <option value="">选择类型</option>
+                        <option ng-repeat="type in alltypes" value="{{type}}">{{type}}</option>
+                    </select>
+                    <p ng-if="typeempty" class="set_err set_red">请选择提案类型</p>
+                </div>
+                <div class="add_info">
+                    <div class="add_name">
+                        <span>提案关键字</span>
+                    </div>
+                    <input ng-model="htmlObj.keyword" class="input_content" type="text" placeholder="" />
+                </div>
+                <div class="add_info">
+                    <div class="add_name_left">
+                        <img src="" alt=""/>
+                        <span>提案部门</span>
+                    </div>
+                    <select ng-model="htmlObj.departmentid"  class="input_content" style="display: inline-block">
+                        <option ng-repeat="item in partmentoption" value="{{item.value}}">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="add_info">
+                    <div class="add_name">
+                        <span>第一发明人身份证</span>
+                    </div>
+                    <input ng-model="htmlObj.first_inventor_idcard" class="input_content" type="text" placeholder=""/>
+                </div>
+                <div class="add_info">
+                    <div class="add_name_left">
+                        <span>技术领域</span>
+                    </div>
+                    <input ng-model="htmlObj.technical_field" class="input_content" type="text" placeholder=""/>
+                </div>
+                <div style="clear:both"></div>
+                <div class="area_text">
+                    <div class="add_area_name">
+                        <span>发明点概述</span>
+                    </div>
+                    <textarea ng-model="htmlObj.summary_invention" class="area_content">
+                    </textarea>
+                </div>
+                <div class="add_info" style="width: 100%;">
+                    <span class="add_name_left col-sm-3">
+                        技术交底书
+                    </span>
+                    <div class="col-sm-4">
+                        <myfileupdownp id="technicaltclarificaitonid" pickid="technicaltclarificaitonid" filecount="1" filetype="pdf,doc,docx,pptx,ppt"
+                                       filesvalue="{{htmlObj.technology_book}}" uploadcomplete="upload_file_attachment(fileids)">上传
+                        </myfileupdownp>
+                    </div>
+                </div>
+                <div class="add_info" style="width: 100%;">
+                    <span class="add_name_left col-sm-3">
+                        <span>上传交底书附图</span>
+                    </span>
+                    <div class="col-sm-4">
+                        <myfileupdownp id="technicaltclarificaitonpic" pickid="technicaltclarificaitonpic" filecount="1" filetype="gif,jpg,jpeg,bmp,png"
+                                       filesvalue="{{htmlObj.technology_drawings}}" uploadcomplete="uploadcom_patent_drawing(fileids)">上传
+                        </myfileupdownp>
+                    </div>
+                </div>
+                <div class="add_info" style="width: 100%;">
+                    <spam class="add_name_left col-sm-3">
+                        <span>专利检索报告</span>
+                    </spam>
+                    <div class="col-sm-4">
+                        <myfileupdownp id="patsearchreportid" pickid="patsearchreportid" filecount="1" filetype="pdf,doc,docx,pptx,ppt"
+                                       filesvalue="{{htmlObj.patent_search_report}}" uploadcomplete="upload_search_report(fileids)">上传
+                        </myfileupdownp>
+                    </div>
+                </div>
+                <div class="add_info">
+                    <div class="add_name_left">
+                        <span>承办人</span>
+                    </div>
+                    <input  ng-model="contractor" class="input_content set_width" type="text" placeholder="承办人"/>
+                </div>
+                <div class="add_info" style="width: 100%;">
+                    <div class="add_name_left col-sm-3">
+                        <span>其他附件</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <myfileupdownp id="otheratachmentid" pickid="otheratachmentid" filecount="8" filetype="pdf,doc,docx,pptx,ppt"
+                                       filesvalue="{{htmlObj.other_attachments}}" uploadcomplete="upload_file_otherattachment(fileids)">上传
+                        </myfileupdownp>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div class="area_text">
+                    <div class="add_area_name">
+                        <span>摘要</span>
+                    </div>
+                    <textarea ng-model="htmlObj.summary" class="area_content">
+                    </textarea>
+                </div>
+                <div style="clear:both"></div>
+                <div class="area_text">
+                    <div class="add_area_name">
+                        <span>备注</span>
+                    </div>
+                    <textarea ng-model="htmlObj.remark" class="area_content">
+
+                    </textarea>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </form>
+    <!--保存和取消-->
+    <div class="save">
+        <div  ng-click="editProposal()" class="save_button hand btn_active">保存</div>
+        <div class="hand save_button" ui-sref="home.proposal">取消</div>
+    </div>
+</div>
+
+

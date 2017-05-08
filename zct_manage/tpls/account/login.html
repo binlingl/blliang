@@ -1,0 +1,32 @@
+<div class="login">
+    <div class="login-content">
+        <div class="top">
+            <!--<img src="/images/accout/login_back.png" alt=""/>-->
+        </div>
+        <div class="content">
+            <form name="login" ng-submit="account_login()">
+                <div class="login-con">
+                    <div class="number space">
+                        <label>
+                        <img src="/images/accout/number.png" alt=""/>
+                    </label>
+                        <input type="text" name="myphone"
+                               ng-pattern="/^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$|(^(13[0-9]|15[0-9]|14[0-9]|17[0-9]|18[0-9])\d{8}$)/" required ng-model="form_obj.Phone" placeholder="请输入手机号码"/></div>
+                    <p ng-if="login.myphone.$error.pattern" class="my-help-block">请输入正确的手机号码</p>
+                    <p ng-if="login.myphone.$dirty&&login.myphone.$error.required" class="my-help-block">请输入手机号码</p>
+                    <div class="password space"><label><img src="/images/accout/password.png" alt=""/></label>
+                        <input  name="password" autocomplete="off" type="password" ng-model="form_obj.PassWord" ng-pattern="/^(\w){6,12}$/"
+                               required placeholder="请输入密码"/></div>
+                    <p ng-if="login.password.$error.pattern" class="my-help-block">密码不符合要求</p>
+                    <p ng-if="login.password.$dirty&&login.password.$error.required" class="my-help-block">密码不能为空</p>
+                    <div class="submit space"><button type="submit" ng-disabled="login.$invalid">登录</button></div>
+                    <div class="action">
+                        <div class="find-password hand" ui-sref="account.find_psw">找回密码？</div>
+                        <div class="register hand" ui-sref="account.register">免费注册 <span><img src="/images/accout/login.png" alt=""/></span></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

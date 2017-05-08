@@ -1,0 +1,203 @@
+.ideas-edit{
+  //width:1200px;
+  min-height: 800px;
+  background:#f0f3f8;
+  .edit-box{
+    //width:910px;
+    height: 920px;
+    margin:0 auto;
+    padding:20px 30px;
+    background: #fff;
+
+    textarea,input{
+      background: #fff !important;
+    }
+    .my-help-block{
+      font-size: 15px;
+      font-weight: bold;
+      color:red;
+      margin:10px 5px;
+      padding:0;
+    }
+    .my-title{
+      margin-bottom:20px;
+    }
+    .btn-logo{
+      display: block;
+      width: 53px;
+      height: 29px;
+     // border:1px solid  black;
+      border-radius: 20px;
+      line-height: 25px;
+      color:#3DC998;
+      text-decoration: none;
+      border:1px solid #3DC998;
+    }
+    .active{
+      background: #3DC998;
+      color:#fff;
+    }
+    .my-panel-title{
+      background: #f9faff;
+      color:#b7b5b6;
+      line-height: 54px;
+      height:54px;
+      padding:0 20px
+    }
+   .new-basic-info{
+     background: #f9faff;
+     color:#b7b5b6;
+     margin:20px 0 10px 0;
+     padding: 20px;
+     min-height:270px;
+     font-size:15px;
+   }
+    .plus-fix{
+      cursor:pointer;
+    }
+   .bottom-btn{
+     margin-top:100px;
+     .my-btn-lg{
+       width:120px;
+       height: 38px;
+       margin-right:10px;
+       outline: none;
+       border:1px solid #6edc6e;
+       // border: none;
+       border-radius: 50px;
+     }
+   }
+
+  }
+
+
+}
+.ideas-edit-new{
+  width:100%;
+  .add-btn{
+    margin-bottom:20px;
+    button{
+      font-size:$bfs;
+      color:$bfc;
+      background:$bbc;
+      padding:$btp $btnlrp;
+      border:none;
+      &:hover{
+        color:$bhfc;
+      }
+    }
+  }
+  .add-content{
+    width:100%;
+    .add-head-title{
+      width:100%;
+      background:$thb;
+      color:$bfc;
+      font-size:$mfz;
+      padding-top:10px;
+      padding-bottom:6px;
+      padding-left:12px;
+      span{
+        color:$bfc;
+        font-size:$mfz;
+      }
+      span:nth-of-type(3){
+        color:$bfc;
+        font-size:$mfz;
+        margin-left:60px;
+      }
+    }
+    .add-details{
+      padding-top:20px;
+      .add-details-content{
+        width:750px;
+        margin:0 auto;
+        border:none;
+        background:#fff;
+        .add-details-list{
+          margin-bottom:10px;
+          background:#fff;
+          span{
+            float:left;
+            width:100px;
+            height:$ih;
+            line-height:$ih;
+            font-size:$ifs;
+            color:$ifc;
+            padding-right:$ilp;
+            text-align: right;
+          }
+          .some-spe{
+            float:left;
+            width:100px;
+            display:inline-block;
+            line-height:160px;
+            vertical-align: middle;
+            font-size:$ifs;
+            color:$ifc;
+            padding-right:$ilp;
+            text-align: right;
+          }
+          input{
+            width:640px;
+            height:$ih;
+            font-size:$ifs;
+            color:$ifc;
+            padding-left:$ilp;
+            border: 1px solid $ibc;
+            &:hover{
+              border: 1px solid $ihbc;
+            }
+          }
+          textarea{
+            width:640px;
+            min-height:160px;
+            font-size:$ifs;
+            color:$ifc !important;
+            padding-left:$ilp;
+            border: 1px solid $ibc;
+            &:hover{
+              border: 1px solid $ihbc;
+            }
+          }
+          select{
+            width:90px;
+            height:$ih;
+            font-size:$ifs;
+            color:$ifc;
+            padding-left:$ilp;
+            border: 1px solid $ibc;
+            &:hover{
+              border: 1px solid $ihbc;
+            }
+          }
+          button{
+            font-size:$bfs;
+            color:$bfc;
+            background:$bbc;
+            padding:$btp $btnlrp;
+            border:none;
+            &:hover{
+              color:$bhfc;
+            }
+          }
+          .span-style{
+            float:left;
+            width:100px;
+            height:30px;
+            line-height:30px;
+            font-size:$ifs;
+            color:$ifc;
+            padding-right:$ilp;
+            text-align: right;
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+}
+

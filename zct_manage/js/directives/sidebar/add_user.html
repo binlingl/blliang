@@ -1,0 +1,96 @@
+<div class="proposal-add-user" >
+    <div class="next-processor-add  active"><!--右边的添加用户弹出框添加active就可以显示--->
+        <!--这是有右边 的添加用户导航-->
+        <div class="my-list-header">
+            <div class="adder-processor-header">
+                <p>
+                    <span class="choice-person-num">已经选择了2个联系人</span>
+                    <a class="btn  btn-sm  btn-active">确认</a>
+                    <a  class="btn btn-sm btn-default " ng-click="bar_cancel()">取消</a>
+                </p>
+                <ul class="list-inline user-list" >
+                    <li class="list-li-box text-center" ng-repeat="tmp in nextProcessorInfo"><!--被选中的下一步处理人表-->
+                        <img src="images/ideas/add/adder_one.png" alt=""/>
+                        <i class="my-close active">x</i>
+                        <p>{{tmp.name}}</p>
+                    </li>
+                    <!--<li class="list-li-box text-center">-->
+                        <!--<img src="images/ideas/add/adder_one.png" alt=""/>-->
+                        <!--<i class="my-close">x</i>-->
+                        <!--<p>陈默默</p>-->
+                    <!--</li>-->
+                    <!--<li class="list-li-box text-center">-->
+                        <!--<img src="images/ideas/add/adder_one.png" alt=""/>-->
+                        <!--<i class="my-close">x</i>-->
+                        <!--<p>陈默默</p>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <div class="next-processor-searcher"><!--搜索框-->
+                <input type="text" class="get-search-keyWords" placeholder="请输入关键字"/>
+                <img src="images/ideas/search_icon.png" class="get-search-icon" alt=""/>
+            </div>
+        </div>
+
+        <ul class="processor-list list-unstyled"> <!--人物列表-->
+            <li class="name-certify">
+                <h4>A</h4>
+                <ul class="list-unstyled processor-icon-list">
+                    <li>
+                        <img src="images/ideas/add/adder_one.png" class="man-header-icon" alt=""/>
+                        <div class="processor-name">
+                            <span >阿拉丁神灯</span>
+                            <i class="dot-circle"
+                               ng-init="hadChoiced=false"
+                               ng-click="hadChoiced=!hadChoiced;choice_next_processor('名字字段1','图想链接字段1',hadChoiced)"
+                               ng-class="{true:'active',false:''}[hadChoiced]"
+                                    ></i>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="name-certify">
+                <h4>A</h4>
+                <ul class="list-unstyled processor-icon-list">
+                    <li>
+                        <img src="images/ideas/add/adder_one.png" class="man-header-icon" alt=""/>
+                        <div class="processor-name">
+                            <span >阿拉丁神灯</span>
+                            <i class="dot-circle"
+                               ng-init="hadChoiced1=false"
+                               ng-click="hadChoiced1=!hadChoiced1;choice_next_processor('名字字段2','图想链接字段2',hadChoiced1)"
+                               ng-class="{true:'active',false:''}[hadChoiced1]"
+                                    ></i>
+                        </div>
+
+                    </li>
+                    <li>
+                        <img src="images/ideas/add/adder_one.png" class="man-header-icon" alt=""/>
+                        <div class="processor-name">
+                            <span >阿拉丁神灯</span>
+                            <i class="dot-circle"
+                               ng-init="hadChoiced2=false"
+                               ng-click="hadChoiced2=!hadChoiced2;choice_next_processor('名字字段3','图想链接字段3',hadChoiced2)"
+                               ng-class="{true:'active',false:''}[hadChoiced2]"
+                                    ></i>
+                        </div>
+
+                    </li>
+                    <li>
+                        <img src="images/ideas/add/adder_one.png" class="man-header-icon" alt=""/>
+                        <div class="processor-name">
+                            <span >阿拉丁神灯</span>
+                            <i class="dot-circle"
+                               ng-init="hadChoiced3=false"
+                               ng-click="hadChoiced3=!hadChoiced3;choice_next_processor('名字字段4','图想链接字段4',hadChoiced3)"
+                               ng-class="{true:'active',false:''}[hadChoiced3]"
+                                    ></i>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </div>
+</div>

@@ -1,0 +1,118 @@
+.my-ideas-list{
+ // background: #008800;
+  .my-btn{
+    background: #fff;
+    color: #2dcc70;
+    width: 81px;
+    height: 33px;
+    line-height: 30px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #a3eaa3;
+    &.active{
+      background: #3dca99;
+      color: #fff;
+    }
+  }
+  .detail-list{
+    margin: 0 auto;
+    //min-height: 1500px;
+   // width:1000px;
+   // padding:30px;
+    background: #fff;
+        .media-body{
+          vertical-align: bottom !important;
+        }
+        .word-des{
+         // cursor: pointer;
+          margin-top:24px;
+          margin-bottom:40px;
+          //padding:0 40px;
+          min-height:190px;
+          //background:#f5f7fb;
+          font-size:15px;
+          .top-alert{
+            height: 70px;
+            line-height: 70px;
+            .mark-icon{
+              width:70px;
+            }
+            .header-des{
+              border-bottom:1px dotted #d2cccc;
+              display:inline-block;
+              width:760px;
+              vertical-align: top;
+            }
+            //.primate-right{//专利
+            //  background: #b9acfc;
+            //  color:#fff;
+            //  padding:2px 5px;
+            //  border-radius:5px;
+            //}
+            //.logo{//商标
+            //  background: #9babff;
+            //  color:#fff;
+            //  padding:2px 5px;
+            //  border-radius: 5px;
+            //}
+            //.board-right{//版权
+            //  background: #f29c9f;
+            //  color:#fff;
+            //  padding:2px 5px;
+            //  border-radius: 5px;
+            //  margin-right:5px;
+            //}
+            //.sug{
+            //  background: #7ecef4;
+            //  color:#fff;
+            //  padding:2px 5px;
+            //  border-radius: 5px;
+            //}
+
+          }
+          .word{
+            padding:10px 45px;
+          }
+          .fix-file{
+            padding:0 45px 10px;
+            .thubmail{
+              img{
+                margin:0 auto;
+              }
+            }
+          }
+        }
+
+        .no-details-pic{
+          margin:190px auto 20px;
+        }
+        .alert-word{
+          margin-bottom:190px;
+        }
+
+
+    //admin action header nav
+    .adminAction-listHeader{
+      // background:#f0f3f8;
+      height:60px;
+      line-height: 60px;
+      // margin-left:30px ;
+      .my-btn-lg{
+        text-decoration: none;
+        width:96px;
+        height:46px;
+        border-radius: 20px;
+        line-height: 42px;
+        font-size:18px;
+        padding:2px 15px;
+        &.active{
+          background: #3dc998;
+          color:#fff;
+        }
+      }
+    }
+
+  }//ideas
+
+
+}

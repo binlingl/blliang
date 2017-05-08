@@ -1,0 +1,23 @@
+<div class="ideas-list">
+    <div class="my-row">
+        <!--<div class="amdin-nav" >-->
+            <!--<ul class="list-inline adminAction-listHeader">-->
+                <!--<li ui-sref="home.ideas.allIdeas" class="hand">-->
+                    <!--<div   ng-class="{active:eval=='allIdeas'}" class="my-btn-lg"  ng-show="can_see_all_idea">全部创意</div>-->
+                <!--</li>-->
+                <!--<li ui-sref="home.ideas.myIdeas"  class="hand" >-->
+                    <!--<div class="my-btn-lg" ng-class="{active:eval=='myIdeas'}" >我的创意</div>-->
+                <!--</li>-->
+                <!--<li ui-sref="home.ideas.appr_list" class="hand" >-->
+                    <!--<div class="my-btn-lg"  ng-class="{active:eval=='waitList'}">待审批</div>-->
+                <!--</li>-->
+                <!--<li ui-sref="home.ideas.approval" class="hand" >-->
+                    <!--<div class="my-btn-lg"  ng-class="{active:eval=='hasApproval'}" >已审批</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+            <mytab data="idea_tab"></mytab>
+        <p><button ui-sref="home.ideas.test">test</button></p>
+        <div class=" list-content"  ui-view="part" ></div>
+    </div>
+</div>

@@ -1,0 +1,596 @@
+<!--专利管理-->
+<div class="patent_list">
+    <div class="container">
+        <div class="sec-nav"><!--中间的按钮-->
+            <!--<div ui-sref="home.patent_list" class="btn btn-active">专利管理</div>-->
+            <!--<div ui-sref="home.list_costmanage" class="btn">费用管理-->
+            <mytab data="patent_tab_list"></mytab>
+        </div>
+        <div class="main-content-container"><!--中间的主题内容部分-->
+            <!--<div class="map">-->
+            <!--<div class="sug-pic" id="patentstate">&lt;!&ndash;第一部分天统计图片&ndash;&gt;-->
+            <!--&lt;!&ndash;<img style="width:100%;height:100%;" src="../images/proposal/piture.png" alt=""/>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="right" id="patentyear">-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="sort">
+                <div class="sort-term">
+                    <div class="sort-list">
+                        <div class="content">
+                            <!--<div class="sort-top">-->
+                                <!--<select name="专利名称" ng-model="init.searchType">-->
+                                    <!--<option value="">全部</option>-->
+                                    <!--<option value="0">专利名称</option>-->
+                                    <!--<option value="1">申请号</option>-->
+                                    <!--<option value="2">案号</option>-->
+                                    <!--<option value="3">发明人</option>-->
+                                    <!--<option value="4">经办人(承办人)</option>-->
+                                    <!--<option value="5">所属产品</option>-->
+                                    <!--<option value="6">权利人</option>-->
+                                <!--</select>-->
+
+                                <!--<input class="space"   ng-model="init.keyword" type="text"/>-->
+                            <!--</div>-->
+                            <!--<div class="sort-bottom">-->
+                                <!--<select name="专利类型"  ng-model="init.type" >-->
+                                    <!--<option value="0">全部</option>-->
+                                    <!--<option value="发明">发明</option>-->
+                                    <!--<option value="实用新型" selected>实用新型</option>-->
+                                    <!--<option value="外观设计">外观设计</option>-->
+                                <!--</select>-->
+                                <!--<select name="专利状态" class="type" ng-model="init.status">-->
+                                    <!--<option value="0">全部</option>-->
+                                    <!--<option value="1">准备中</option>-->
+                                    <!--<option value="2">受理</option>-->
+                                    <!--<option value="3">初审</option>-->
+                                    <!--<option value="4">公开</option>-->
+                                    <!--<option value="5">实审</option>-->
+                                    <!--<option value="6">复审</option>-->
+                                    <!--<option value="7">授权</option>-->
+                                    <!--<option value="8">终止</option>-->
+                                    <!--<option value="9">视为撤回</option>-->
+                                    <!--<option value="10">无效</option>-->
+                                    <!--<option value="11">驳回</option>-->
+                                <!--</select>-->
+                                <!--<select name="申请国" class="country" ng-model="init.country">-->
+                                    <!--<option value="0">全部</option>-->
+                                    <!--<option value="{{country.id}}" ng-repeat="country in country_patent" ng-bind="country.name">申请国</option>-->
+                                <!--</select>-->
+                            <div style="margin-bottom:20px">
+                                <span class="time">
+                                    <span for="">创建日期</span>
+                                    <p class="date-time-dre">
+                                        <input type="text" readonly class="form-control date_input" uib-datepicker-popup
+                                               ng-model="init.startDate"
+                                               is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true"
+                                               close-text="Close" name="startDate"/>
+                                        <span class="input-group-btn" >
+                                                <button type="button" class="btn btn-default" ng-click="open1()">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </button>
+                                        </span>
+                                    </p>
+                                </span>
+                                <span class="zhi">至</span>
+                                 <span>
+                                     <p class="date-time-dre">
+                                         <input type="text" readonly class="form-control date_input" uib-datepicker-popup
+                                                ng-model="init.endDate"
+                                                is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true"
+                                                close-text="Close" name="endDate"/>
+                                        <span class="input-group-btn" >
+                                                <button type="button" class="btn btn-default" ng-click="open2()">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </button>
+                                        </span>
+                                     </p>
+                                </span>
+                            </div>
+
+                            <!--</div>-->
+                            <ideasearchinput data="search_input" inputmethods="find_patent_list()"  subdata="subdata" >
+
+                            </ideasearchinput>
+                        </div>
+
+                        <!--<div class="action">-->
+                            <!--<button ng-click="find_patent_list()">查询</button>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="sort-con">
+                        <div class="con-top">
+                            <div class="add" >
+                                <button ng-show="permission.add" ui-sref="home.patentAdd">
+                                    <label> +</label>新增</button>
+                            </div>
+                            <div class="action-con">
+                            <span ng-click="delete_large_list()">
+                               <img src="/images/patent/new_patent/cancel.png" alt=""/>
+                                <label>删除</label>
+                            </span>
+                                <span class="line"><img src="/images/patent/new_patent/line.png" alt=""/></span>
+                             <span ng-click="exportClick()">
+                               <img src="/images/patent/new_patent/export.png" alt=""/>
+                                <label>导出已选专利</label>
+                            </span>
+                                <span class="line"><img src="/images/patent/new_patent/line.png" alt=""/></span>
+
+                             <span>
+                               <img src="/images/patent/new_patent/load.png" alt=""/>
+                                <label> 专利下载</label>
+                            </span>
+                                <span class="line"><img src="/images/patent/new_patent/line.png" alt=""/></span>
+                             <span>
+                               <img src="/images/patent/new_patent/import.png" alt=""/>
+                                <label>Excel导入</label>
+                            </span>
+
+                            </div>
+                        </div>
+                        <div class="con-center">
+                                <div style="background:#ffffff;">
+                                    <dirtable datasource="asd" option="qwe"></dirtable>
+                                </div>
+                                <!--<table class="table table-bordered">-->
+                                    <!--<thead>-->
+                                    <!--<tr>-->
+                                        <!--<td width="115" class="number"><input ng-click="allSelect()" ng-model="all_select" type="checkbox"/>案号</td>-->
+                                        <!--<td width="199">专利名称</td>-->
+                                        <!--<td width="128">申请号</td>-->
+                                        <!--<td width="90">申请日</td>-->
+                                        <!--<td width="90">公开日期</td>-->
+                                        <!--<td width="120">发明人</td>-->
+                                        <!--<td width="68">专利状态</td>-->
+                                        <!--<td width="112">操作</td>-->
+                                    <!--</tr>-->
+                                    <!--</thead>-->
+                                    <!--<tbody>-->
+                                    <!--<tr ng-repeat="item in list_item">-->
+                                        <!--&lt;!&ndash;ng-click="isSelect(item)"&ndash;&gt;-->
+                                        <!--<td class="number"><input ng-model="item.checked"  type="checkbox"/>-->
+                                            <!--<span ng-bind="item.casenumber" >PT2006836 </span>  </td>-->
+                                        <!--<td class="shenglue hand" ng-bind="item.name" ui-sref="home.patentDetails({id:item.id})">【发明】一种数据处理方法..</td>-->
+                                        <!--<td ng-bind="item.application_number">CN102917028A</td>-->
+                                        <!--<td ng-bind="item.application_date| date : 'yyyy-MM-dd '">2015-02-10</td>-->
+                                        <!--<td ng-bind="item.authorization_date| date : 'yyyy-MM-dd'">2015-02-10</td>-->
+                                        <!--<td class="shenglue" ng-bind="item.inventor">张三,李四,王二...  </td>-->
+                                        <!--<td ng-bind="item.statusStr">授权</td>-->
+                                        <!--<td class="action">-->
+                                            <!--<p>-->
+                                                <!--&lt;!&ndash;<span ng-click="quit_company(x.id)">退出企业</span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;ng-if="item.status=='7'&&item.deal_states=='无'"&ndash;&gt;-->
+                                                <!--<span class="act-list"  ng-if="item.status=='7'&&item.deal_states=='无'" ng-click="deal_patent(item)">出售</span>-->
+                                                <!--<span class="act-list" ui-sref="home.patentAdd({patentid:item.id})" ng-show="permission.edit">编辑</span>-->
+                                                <!--<span class="act-list" ng-click="delete_single_list(item.id)" ng-show="permission.del">删除</span>-->
+                                            <!--</p>-->
+                                        <!--</td>-->
+                                    <!--</tr>-->
+                                    <!--</tbody>-->
+                                <!--</table>-->
+
+                        </div>
+                        <div class="bottom-pagination">
+                            <!--template-url="/directive_tpls/pagination.html"-->
+                            <uib-pagination
+                                    ng-change="pageChanged()"
+                                    items-per-page="page.perPageItems"
+                                    total-items="page.bigTotalItems"
+                                    ng-model="page.bigCurrentPage"
+                                    max-size="page.maxSize"
+                                    class="pagination-sm pagination ng-isolate-scope ng-valid"
+                                    boundary-link-numbers="true"
+                                    rotate="true">
+                            </uib-pagination>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--刪除文件时的提示-->
+    <div  style="display: none" class="list_export">
+        <div class="export_document">
+            <span>请选择待删除提案</span>
+            <span style="display:none">请选择待导出提案</span>
+        </div>
+    </div>
+</div>
+<!--专利基本详情右侧弹框-->
+<div class="set_details_aside" ng-show="show_detail"><!--ng-show="show_detail"-->
+    <div class="details_title">
+        <div class="info_name" ui-sref="home.patentRevising">
+            <span class="active">基本信息</span>
+        </div>
+        <div class="info_name active" ui-sref="home.patentRevising.cost">
+            <span>费用</span>
+        </div>
+        <div class="info_name" ui-sref="home.patentRevising.help">
+            <span>资助</span>
+        </div>
+    </div>
+    <div class="details_aside_main">
+        <div class="details_info">
+            <table>
+                <tr>
+                    <td class="info_detail_name">
+                        <span class="set_red">*</span>
+                        <span>案号:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        PT20164564
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span class="set_red">*</span>
+                        <span>专利名称:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span>一种基于语音的文字识别方式</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>专利类型:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>
+                            发明
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>申请国家:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>中国</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>权利人:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>深圳市扯淡科技有限公司</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>提案部门:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>开发部</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>发明人:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>张三李四王二</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <p class="text-justify">第一发明人身份证:</p>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>345345345</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>所属产品:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>遥控器</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>技术领域:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>计算机</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>对应提案:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>PTe883q8y</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>提案评分</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>8.6</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>专利关键词:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>语音识别声控</span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>IPC分类号:</span>
+                    </td>
+                    <td  class="info_detail_cont">
+                        <span>PT89</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_point_name">
+                        <span class="set_style">
+                            发明点概述:
+                          </span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span class="set_style">
+                            一种语音识别的更新方法，其特征在于，包括语音输入信号，利用本地语音识别设别识别语音
+                            ……等等
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>技术交底书:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span><a class="set_blue" href="">一种基于语音的文字识别方式.doc</a></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_point_name">
+                        <span class="set_style">
+                            技术交底附图:
+                          </span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span class="set_style">
+                           <img src="../images/proposal/proposal_picture.png" alt=""/>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>检索报告:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span>一种基于语音的文字识别方式.doc</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>承办人:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span>王铁</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>其他附件:</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont">
+                        <span>无</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_point_name">
+                        <span class="set_style"> 摘要：</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont rightCont">
+                        <span class="set_style">
+                            一种语音识别的更新方法，其特征在于，包括语音输入信号，利用本地语音识别设别识别语音
+
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>备注：</span>
+                    </td>
+                    <td colspan="3" class="info_detail_cont  ">
+                        <span class="alert-word">五</span>
+                    </td>
+                </tr><!---cdcdcdcdc--->
+                <tr>
+                    <td class="info_detail_name">
+                        <span>专利状态：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                          公开
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>截止日期：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <!--<span>中国</span>-->
+                        <span>2012-32-44</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>申请日：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                           <span>2089-09-00</span>
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>申请号：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <!--<span>中国</span>-->
+                        <span>dwdsd323sds</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>公开日：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                          0000-00-00
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>公开号：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <!--<span>中国</span>-->
+                        <span>fsadf8798</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>授权公告日：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                           0000-00-00
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>公告号：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <!--<span>中国</span>-->
+                        0000000
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>授权日：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                          0000-00-00
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>证书号：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <!--<span>中国</span>-->
+                        666666
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>待缴年费日：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                          2019-00-99
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>专利终止日：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <!--<span>中国</span>-->
+                        0000-00-00
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>无效/失效日：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                          2019-00-99
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>无效原因：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        xxxx
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_detail_name" >
+                        <span>交易状态：</span>
+                    </td>
+                    <td  class="info_detail_cont" colspan="3">
+                        <span>
+                           未交易
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <h4>代理机构信息</h4>
+            <table>
+                <tr>
+                    <td class="info_detail_name">
+                        <span>代理机构：</span>
+                    </td>
+                    <td  class="info_detail_cont leftCont">
+                        <span>
+                           **XXXX***
+                        </span>
+                    </td>
+                    <td class="info_detail_name">
+                        <span>代理人：</span>
+                    </td>
+                    <td  class="info_detail_cont rightCont">
+                        <span>******某</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+<!--填写交易意向-->
+<div ng-if="show_deal" class="deal-purpose">
+        <div class="deal-center">
+            <div class="close-style hand" ng-click="closeDeal()">X</div>
+            <div class="deal-title">
+                填写交易意向
+            </div>
+            <div class="deal-content">
+                <div class="deal-details">
+                    <span>交易方式:</span>
+                    <select class="select-type" ng-model="deal_detail.deal_type" name="" id="">
+                        <option value="转让">转让</option>
+                        <option value="许可">许可</option>
+                        <option value="临时许可">临时许可</option>
+                    </select>
+                </div>
+                <div class="deal-details">
+                    <span>价&nbsp &nbsp &nbsp格:</span>
+                    <div class="div-type" ng-if="price==false">
+                        面议<span ng-click="clickPrice()" class="color-green hand set-margin">自定义价格</span>
+                    </div>
+                    <!--自定义价格-->
+                    <input ng-if="price==true" ng-model="deal_detail.price" class="select-type" />
+                </div>
+                <div class="deal-details">
+                    <span>出售状态:</span>
+                    <select class="select-type" ng-model="deal_detail.deal_state">
+                        <option value="在售">在售</option>
+                        <option value="已下架">已下架</option>
+                    </select>
+                </div>
+                <div class="save">
+                    <div class="btn active" ng-click="save_deal_patent()">
+                        保存
+                    </div>
+                    <div class="btn" ng-click="closeDeal()">
+                        取消
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</div>
+
+

@@ -1,0 +1,68 @@
+<div class="scene_apply">
+    <div class="apply-content">
+        <div class="top">
+        </div>
+        <div class="content">
+            <form>
+                <!--加入企业-->
+                <div class="apply_box">
+                    <div class="set_tri"></div>
+                    <div class="back hand" ui-sref="scene.choice"><img src="../images/scene/back.png" alt=""/></div>
+                    <div class="apply_epr">加入企业</div>
+                    <div class="search_epr">
+                        <input autofocus="autofocus" type="text" ng-model="name" id="company_name"/>
+                        <div class="set_right hand" ng-click="getCompanyList(name)">
+                            <img src="../images/scene/search.png" alt=""/>
+                        </div>
+                    </div>
+                    <!--当搜索不到企业时-->
+                    <div ng-if="exist== 2" class="un_find">
+                        <div style="margin-bottom:10px;">
+                            <img src="../images/scene/book.png" alt=""/>
+                        </div>
+                        <span>未检索到相关企业</span>
+                    </div>
+                    <!--企业列表-->
+                    <div  ng-if="exist== 1" class="epr_list">
+                        <ul class="list-unstyled">
+                            <li ng-repeat="x in item">
+                                <div class="set-hover-style">
+                                    <span ng-bind="x.name" class="epr_name"></span>
+                                    <span ng-if="x.status=='2'" class="applied">
+                                           已加入
+                                    </span>
+                                    <span ng-if="x.status=='1'" class="wait_check">
+                                             等待审核
+                                    </span>
+                                    <span ng-click="applyCompany(x.id)" ng-if="x.status=='0'" class="hand ask_in">
+                                             申请加入
+                                    </span>
+                                </div>
+                            </li>
+                            <!--   <li>
+                                   <span class="epr_name">深圳峰创智诚科技有限公司</span>
+                                   <span class="wait_check">
+                                           等待审核
+                                   </span>
+                               </li>
+                               <li>
+                                   <span class="epr_name">深圳峰创智诚科技有限公司</span>
+                                   <span class="ask_in">
+                                           申请加入
+                                   </span>
+                               </li>-->
+                        </ul>
+                    </div>
+                    <!--为空时的显示字段-->
+                    <div ng-if="exist== 3" class="set_empty">不能为空!</div>
+                </div>
+            </form>
+        </div>
+        <!--底部-->
+        <div class="bottom" style="display:none">
+            <p>联系客服：400-884-0588</p>
+            <p>深圳市华第时代科技有限公司</p>
+        </div>
+    </div>
+
+</div>

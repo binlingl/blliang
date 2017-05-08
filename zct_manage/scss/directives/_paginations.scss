@@ -1,0 +1,31 @@
+.bottom-pagination{
+  text-align:center;
+  padding:20px;
+  .pagination > li{
+    margin-right:8px;
+    display:inline-block;
+
+  }
+  .pagination > li>a{
+    border-radius: 3px;
+  }
+    .pagination > li > a{
+        color:#666666;
+    }
+  .pagination > .active > a{
+    background:#ff9520;
+    border-radius: 3px;
+      border:1px solid #ff9520;
+      color:white;
+  }
+
+    li:last-child{
+        span{
+            border:none;
+            color: #ff9520;
+        }
+        span:hover{
+            //background:white;
+        }
+    }
+}

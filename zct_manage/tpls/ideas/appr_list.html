@@ -1,0 +1,86 @@
+
+<div   class="appr_list">
+    <!--待审批的列表-->
+    <div class="waiting-list" ng-show="hide_list==2">
+        <div style="background:#ffffff;">
+            <dirtable datasource="asd" option="qwe"></dirtable>
+        </div>
+        <!--<table class="table table-bordered table-responsive text-center ">-->
+            <!--<thead  class="list-header">-->
+            <!--<tr >-->
+                <!--&lt;!&ndash;<td><input type="checkbox"/></td>&ndash;&gt;-->
+                <!--<td width="185" class="text-left">创意名称</td>-->
+                <!--<td width="73">创建人</td>-->
+                <!--<td width="85">创建日期</td>-->
+                <!--<td width="85">部门</td>-->
+                <!--<td width="80">标签</td>-->
+                <!--<td width="110">操作</td>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr  ng-repeat="tmp in waitList track by $index">-->
+                <!--&lt;!&ndash;<td><input type="checkbox"/></td>&ndash;&gt;-->
+                <!--<td class="text-left"> {{tmp.idea.name}}</td>-->
+                <!--<td>{{tmp.user.realname}}</td>-->
+                <!--<td>{{tmp.idea.created_at | date:"yyyy-MM-dd"}} </td>-->
+                <!--<td>{{tmp.depart.name}}</td>-->
+                <!--&lt;!&ndash;<td><span ng-repeat="item in tmp.idea.tags">{{item}}、</span></td> &ndash;&gt;-->
+                <!--<td><span>{{tmp.idea.tags}}</span></td>-->
+                <!--<td><button class="my-btn" ui-sref="home.ideas.appr_list_detail({id:tmp.idea.id})">审批</button></td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+            <!--&lt;!&ndash;<tfoot>&ndash;&gt;-->
+            <!--&lt;!&ndash;<tr class="list-footer">&ndash;&gt;-->
+                <!--&lt;!&ndash;<td colspan="6" class="text-right">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<ul class="list-inline my-bottom-page">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<label>每页显示</label>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="pageNum" ng-model="get_list.pageSize">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<option value="10">10</option>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<option value="20">15</option>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<option value="30">20</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<label>共<span>20</span>件创意，<span>1</span>/<span>20</span></label>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="btn btn-sm glyphicon glyphicon-menu-left"></button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="btn btn-sm glyphicon glyphicon-menu-right"></button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<label>跳转到</label>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input type="text" class="my-input" ng-model="get_list.pageIndex"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="btn " ng-click="get_wait_list()">GO</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                <!--&lt;!&ndash;</td>&ndash;&gt;-->
+            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+            <!--&lt;!&ndash;</tfoot>&ndash;&gt;-->
+
+        <!--</table>-->
+
+        <div class="bottom-pagination" ng-show="hide_list==2">
+            <uib-pagination template-url="../js/directives/pagination/pagination.html"
+                            total-items="pageParam.totalItems"
+                            ng-model="pageParam.currentPage"
+                            max-size="pageParam.maxSize"
+                            boundary-links="false"
+                            ng-change="page_change()"
+                            items-per-page="pageParam.perPageItems"
+                            first-text="第一页" previous-text="上一页" next-text="下一页" last-text="最后页"
+                            boundary-links="true" boundary-link-numbers="true">
+            </uib-pagination>
+        </div>
+    </div>
+    <!--no list pic-->
+    <div ng-show="hide_list==1">
+        <div class="no-list-pic" ><!--当没有内容的时候，就显示此图片-->
+            <img src="images/ideas/no-ideas-pic.png" class="img-responsive no-details-pic alt="/>
+            <h4 class="text-center text-success alert-word">你还未收到创意审批</h4>
+        </div>
+
+    </div>
+
+
+</div>

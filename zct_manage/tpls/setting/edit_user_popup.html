@@ -1,0 +1,50 @@
+<div class="setting-right-bar">
+    <div class="right-con">
+        <div class="company-infor-con">
+            <form name="update_user1" ng-submit="edit_user_infor()">
+                <div class="theme"> 修改用户</div>
+                <div>
+                    <span class="title">用户名称</span>
+                    <input  ng-model="company_user.realname" required name="title" type="text"/></div>
+
+                <div ng-show="update_user1.title.$dirty && update_user1.title.$invalid && update_user1.title.$error.required">
+                    <p class="my-help-block">部门名称不能为空</p>
+                </div>
+                <div>
+                    <span class="title">手机号码</span>
+                    <input  ng-model="company_user.phone"  ng-pattern="/^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$|(^(13[0-9]|15[0-9]|14[0-9]|17[0-9]|18[0-9])\d{8}$)/"
+                            name="myphone" required type="text"/></div>
+                <div ng-if="update_user1.myphone.$error.pattern">
+                    <p class="my-help-block">电话格式不正确</p>
+                </div>
+                <div ng-if="update_user1.myphone.$dirty&&personal.myphone.$error.required">
+                    <p class="my-help-block">联系电话不能为空</p>
+                </div>
+                <div class="company-type">
+                    <span class="title">用户角色</span>
+                    <select  ng-model="company_user.roleid">
+                        <option value="{{item.id}}"  ng-repeat="item in role_list" ng-bind="item.name"> </option>
+                    </select>
+                </div>
+
+                <div class="company-type">
+                    <span class="title">所属部门</span>
+                    <select  ng-model="company_user.departmentid">
+                        <option value="{{item.id}}"  ng-repeat="item in department_list" ng-bind="item.name"></option>
+                    </select>
+                </div>
+                <div class="detail">
+                    <div><label>创  建  人：</label> <span  ng-bind="company_user.create_company_user_id">张三</span></div>
+                    <div><label>创建时间：</label> <span  ng-bind="company_user.created_at"> 2016-03-06  16:36:48</span></div>
+                    <div><label>最后修改人：</label> <span  ng-bind="company_user.update_company_user_id">张毛毛</span></div>
+                    <div><label>最后修改时间：</label> <span  ng-bind="company_user.updated_at"> 2016-03-06  16:36:48</span></div>
+                </div>
+                <div class="action">
+                    <button class="my-button" type="submit" ng-click="keepAll(company_user)" ng-disabled="update_user1.$invalid">保存</button>
+                    <button class="my-button" type="reset" ng-click="cancel()">取消</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
