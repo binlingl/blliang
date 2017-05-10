@@ -15,6 +15,9 @@ define(["app"],function(myapp){
             templateUrl:'js/directive/popup/popup.html',
             link:function(scope,element,attr){
                 scope.abc = "abc";
+                scope.cancel =function(){
+                   
+                }
             }
 
         }
