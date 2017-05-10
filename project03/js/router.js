@@ -1,0 +1,32 @@
+/**
+ * Created by admin on 2017/5/8.
+ */
+define(["app"],function(myapp){
+    myapp.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise("/home");
+        $stateProvider.state("home",{
+            url:'/home',
+            views:{
+                'main':{
+                    templateUrl:'html/home.html',
+                    controller:'home_ctrl'
+                }
+            }
+        }).state("help",{
+            url:'/help',
+            views:{
+                'main':{
+                    templateUrl:'html/help.html',
+                    controller:'help_ctrl'
+                }
+            }
+        }).state('about',{
+            url:'/about',
+            views:{
+                'main':{
+                    templateUrl:'html/about.html'
+                }
+            }
+        })
+    }])
+})

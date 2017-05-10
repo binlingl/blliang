@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-ui-router.js"></script>
+</head>
+<body>
+        <div ui-sref="home"  ng-app="myApp">首页
+
+            <div ui-view="main">
+
+
+            </div>
+
+        </div>
+
+    <div  ng-app="myApp" ng-controller="the_other">
+        {{b}}
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    //定义一个模块“myApp”,页面中通过ng-app作为入口点并进行加载，需要用ui-router,因此需要注入ui.router
+    var myModule = angular.module("myApp",['ui.router']);
+    //可在config里面进行路由的配置
+    myModule.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
+        //当所有state不适配时的路径，既默认路径
+       // $urlRouterProvider.otherwise('/home');
+        $stateProvider.state("home",{
+            url:'/home',
+            views:{
+                'main':{
+                    template:'<div>这是路由{{a}}</div>',
+                    controller:'ng_ctrl'
+                }
+            }
+        })
+
+    }])
+    //在该模块下定义相应的控制器,在控制器里可注入依赖
+    myModule.controller("ng_ctrl",["$scope",function($scope){
+        $scope.a = "my name is liangbinling";
+    }]);
+
+    myModule.controller("the_other",["$scope",function($scope){
+        $scope.b = "this is second app";
+    }])
+
+</script>

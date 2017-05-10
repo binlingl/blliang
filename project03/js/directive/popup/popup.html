@@ -1,0 +1,38 @@
+
+<div class="popup">
+    <div class="popup-center">
+        <form name="login-form">
+            <div class="form-title">
+                <span style="width:21px;">
+                    {{data.title}}
+                </span>
+            </div>
+            <div class="form-content">
+                <div class="form-list" ng-repeat="item in data.content">
+                    <div>
+                        {{item.label}}
+                    </div>
+                    <input ng-if="item.type !='radio' && item.type !='checkbox'" class="input-style" type="{{item.type}}" />
+                    <div ng-if="item.type=='radio'" ng-repeat="i in item.allvalue" >
+                         <input type="radio" name="i.typename" value="i.value"/>
+                        {{i.showname}}
+                    </div>
+                    <div class="radio-style" ng-if="item.type=='checkbox'" ng-repeat="i in item.allvalue">
+                        <input type="checkbox" name="i.typename" value="i.value"/>
+                        {{i.showname}}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <botton type="submit" value="login" method()>登录</botton>
+                <botton type="submit" value="cancel">取消</botton>
+            </div>
+        </form>
+        <span>
+
+        </span>
+
+    </div>
+</div>
+
+
